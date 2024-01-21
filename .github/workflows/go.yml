@@ -3,7 +3,7 @@ name: Go
 on: [push]
 
 env:
-  GO_DIR: ./overseerr
+  GO_DIR: "."
 
 jobs:
   test:
