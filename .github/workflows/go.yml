@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup Go ${{ matrix.go-version }}
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go-version }}
-          working-directory: ${{ env.GO_DIR }}
+          cache-dependency-path: ${{ env.GO_DIR }}/*sum
       # You can test your matrix by printing the current Go version
       - name: Display Go version
         run: go version
