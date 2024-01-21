@@ -34,5 +34,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Go-results-${{ matrix.go-version }}
-          path: TestResults-${{ matrix.go-version }}.json
-          working-directory: ${{ env.GO_DIR }}
+          path: ${{ env.GO_DIR }}/TestResults-${{ matrix.go-version }}.json
