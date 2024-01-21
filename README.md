@@ -30,3 +30,7 @@ Warnings:
 The first issue is addressed in [https://github.com/OpenAPITools/openapi-generator/issues/14317]
 
 For now I've side-stepped this by adding the `--skip-validate-spec` flag. I've also included a yaml of the spec used for generation.
+
+## Versioning
+
+This repository follows [semantic versioning](https://semver.org/)
