@@ -12,6 +12,7 @@ package overseerr_go
 
 import (
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -261,8 +262,8 @@ func (o PlexConnection) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *PlexConnection) UnmarshalJSON(bytes []byte) (err error) {
-    // This validates that all required properties are included in the JSON object
+func (o *PlexConnection) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
@@ -275,7 +276,7 @@ func (o *PlexConnection) UnmarshalJSON(bytes []byte) (err error) {
 
 	allProperties := make(map[string]interface{})
 
-	err = json.Unmarshal(bytes, &allProperties)
+	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
 		return err;
@@ -289,7 +290,9 @@ func (o *PlexConnection) UnmarshalJSON(bytes []byte) (err error) {
 
 	varPlexConnection := _PlexConnection{}
 
-	err = json.Unmarshal(bytes, &varPlexConnection)
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varPlexConnection)
 
 	if err != nil {
 		return err

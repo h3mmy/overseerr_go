@@ -45,23 +45,23 @@ Get logged-in user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.AuthMeGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthMeGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthMeGet`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthMeGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.AuthMeGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthMeGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthMeGet`: User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthMeGet`: %v\n", resp)
 }
 ```
 
@@ -106,25 +106,25 @@ Reset the password for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    guid := "9afef5a7-ec89-4d5f-9397-261e96970b50" // string | 
-    authResetPasswordGuidPostRequest := *openapiclient.NewAuthResetPasswordGuidPostRequest("Password_example") // AuthResetPasswordGuidPostRequest | 
+	guid := "9afef5a7-ec89-4d5f-9397-261e96970b50" // string |
+	authResetPasswordGuidPostRequest := *openapiclient.NewAuthResetPasswordGuidPostRequest("Password_example") // AuthResetPasswordGuidPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.AuthResetPasswordGuidPost(context.Background(), guid).AuthResetPasswordGuidPostRequest(authResetPasswordGuidPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthResetPasswordGuidPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthResetPasswordGuidPost`: AuthLogoutPost200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthResetPasswordGuidPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.AuthResetPasswordGuidPost(context.Background(), guid).AuthResetPasswordGuidPostRequest(authResetPasswordGuidPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthResetPasswordGuidPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthResetPasswordGuidPost`: AuthLogoutPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthResetPasswordGuidPost`: %v\n", resp)
 }
 ```
 
@@ -134,7 +134,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**guid** | **string** |  | 
+**guid** | **string** |  |
 
 ### Other Parameters
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiAuthResetPasswordGuidPostR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authResetPasswordGuidPostRequest** | [**AuthResetPasswordGuidPostRequest**](AuthResetPasswordGuidPostRequest.md) |  | 
+ **authResetPasswordGuidPostRequest** | [**AuthResetPasswordGuidPostRequest**](AuthResetPasswordGuidPostRequest.md) |  |
 
 ### Return type
 
@@ -178,24 +178,24 @@ Send a reset password email
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    authResetPasswordPostRequest := *openapiclient.NewAuthResetPasswordPostRequest("Email_example") // AuthResetPasswordPostRequest | 
+	authResetPasswordPostRequest := *openapiclient.NewAuthResetPasswordPostRequest("Email_example") // AuthResetPasswordPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.AuthResetPasswordPost(context.Background()).AuthResetPasswordPostRequest(authResetPasswordPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthResetPasswordPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthResetPasswordPost`: AuthLogoutPost200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthResetPasswordPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.AuthResetPasswordPost(context.Background()).AuthResetPasswordPostRequest(authResetPasswordPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AuthResetPasswordPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthResetPasswordPost`: AuthLogoutPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AuthResetPasswordPost`: %v\n", resp)
 }
 ```
 
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiAuthResetPasswordPostReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authResetPasswordPostRequest** | [**AuthResetPasswordPostRequest**](AuthResetPasswordPostRequest.md) |  | 
+ **authResetPasswordPostRequest** | [**AuthResetPasswordPostRequest**](AuthResetPasswordPostRequest.md) |  |
 
 ### Return type
 
@@ -244,23 +244,23 @@ Get Plex users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.SettingsPlexUsersGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.SettingsPlexUsersGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexUsersGet`: []SettingsPlexUsersGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.SettingsPlexUsersGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.SettingsPlexUsersGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.SettingsPlexUsersGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexUsersGet`: []SettingsPlexUsersGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.SettingsPlexUsersGet`: %v\n", resp)
 }
 ```
 
@@ -305,26 +305,26 @@ Get all users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    take := float32(20) // float32 |  (optional)
-    skip := float32(0) // float32 |  (optional)
-    sort := "sort_example" // string |  (optional) (default to "created")
+	take := float32(20) // float32 |  (optional)
+	skip := float32(0) // float32 |  (optional)
+	sort := "sort_example" // string |  (optional) (default to "created")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserGet(context.Background()).Take(take).Skip(skip).Sort(sort).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserGet`: UserGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserGet(context.Background()).Take(take).Skip(skip).Sort(sort).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserGet`: UserGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserGet`: %v\n", resp)
 }
 ```
 
@@ -339,8 +339,8 @@ Other parameters are passed through a pointer to a apiUserGetRequest struct via 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **take** | **float32** |  | 
- **skip** | **float32** |  | 
+ **take** | **float32** |  |
+ **skip** | **float32** |  |
  **sort** | **string** |  | [default to &quot;created&quot;]
 
 ### Return type
@@ -375,24 +375,24 @@ Import all users from Plex
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userImportFromPlexPostRequest := *openapiclient.NewUserImportFromPlexPostRequest() // UserImportFromPlexPostRequest |  (optional)
+	userImportFromPlexPostRequest := *openapiclient.NewUserImportFromPlexPostRequest() // UserImportFromPlexPostRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserImportFromPlexPost(context.Background()).UserImportFromPlexPostRequest(userImportFromPlexPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserImportFromPlexPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserImportFromPlexPost`: []User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserImportFromPlexPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserImportFromPlexPost(context.Background()).UserImportFromPlexPostRequest(userImportFromPlexPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserImportFromPlexPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserImportFromPlexPost`: []User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserImportFromPlexPost`: %v\n", resp)
 }
 ```
 
@@ -407,7 +407,7 @@ Other parameters are passed through a pointer to a apiUserImportFromPlexPostRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userImportFromPlexPostRequest** | [**UserImportFromPlexPostRequest**](UserImportFromPlexPostRequest.md) |  | 
+ **userImportFromPlexPostRequest** | [**UserImportFromPlexPostRequest**](UserImportFromPlexPostRequest.md) |  |
 
 ### Return type
 
@@ -441,24 +441,24 @@ Create new user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userPostRequest := *openapiclient.NewUserPostRequest() // UserPostRequest | 
+	userPostRequest := *openapiclient.NewUserPostRequest() // UserPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserPost(context.Background()).UserPostRequest(userPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserPost`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserPost(context.Background()).UserPostRequest(userPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserPost`: User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserPost`: %v\n", resp)
 }
 ```
 
@@ -473,7 +473,7 @@ Other parameters are passed through a pointer to a apiUserPostRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userPostRequest** | [**UserPostRequest**](UserPostRequest.md) |  | 
+ **userPostRequest** | [**UserPostRequest**](UserPostRequest.md) |  |
 
 ### Return type
 
@@ -507,24 +507,24 @@ Update batch of users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userPutRequest := *openapiclient.NewUserPutRequest() // UserPutRequest | 
+	userPutRequest := *openapiclient.NewUserPutRequest() // UserPutRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserPut(context.Background()).UserPutRequest(userPutRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserPut`: []User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserPut(context.Background()).UserPutRequest(userPutRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserPut`: []User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserPut`: %v\n", resp)
 }
 ```
 
@@ -539,7 +539,7 @@ Other parameters are passed through a pointer to a apiUserPutRequest struct via 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userPutRequest** | [**UserPutRequest**](UserPutRequest.md) |  | 
+ **userPutRequest** | [**UserPutRequest**](UserPutRequest.md) |  |
 
 ### Return type
 
@@ -573,22 +573,22 @@ Register a web push /user/registerPushSubscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userRegisterPushSubscriptionPostRequest := *openapiclient.NewUserRegisterPushSubscriptionPostRequest("Endpoint_example", "Auth_example", "P256dh_example") // UserRegisterPushSubscriptionPostRequest | 
+	userRegisterPushSubscriptionPostRequest := *openapiclient.NewUserRegisterPushSubscriptionPostRequest("Endpoint_example", "Auth_example", "P256dh_example") // UserRegisterPushSubscriptionPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersAPI.UserRegisterPushSubscriptionPost(context.Background()).UserRegisterPushSubscriptionPostRequest(userRegisterPushSubscriptionPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserRegisterPushSubscriptionPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UserRegisterPushSubscriptionPost(context.Background()).UserRegisterPushSubscriptionPostRequest(userRegisterPushSubscriptionPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserRegisterPushSubscriptionPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -603,7 +603,7 @@ Other parameters are passed through a pointer to a apiUserRegisterPushSubscripti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRegisterPushSubscriptionPostRequest** | [**UserRegisterPushSubscriptionPostRequest**](UserRegisterPushSubscriptionPostRequest.md) |  | 
+ **userRegisterPushSubscriptionPostRequest** | [**UserRegisterPushSubscriptionPostRequest**](UserRegisterPushSubscriptionPostRequest.md) |  |
 
 ### Return type
 
@@ -637,24 +637,24 @@ Delete user by ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdDelete(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdDelete`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdDelete`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdDelete(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdDelete`: User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdDelete`: %v\n", resp)
 }
 ```
 
@@ -664,7 +664,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -707,24 +707,24 @@ Get user by ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdGet`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdGet`: User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdGet`: %v\n", resp)
 }
 ```
 
@@ -734,7 +734,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -777,25 +777,25 @@ Update a user by user ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    user := *openapiclient.NewUser(int32(1), "hey@itsme.com", "2020-09-02T05:02:23.000Z", "2020-09-02T05:02:23.000Z") // User | 
+	userId := float32(8.14) // float32 |
+	user := *openapiclient.NewUser(int32(1), "hey@itsme.com", "2020-09-02T05:02:23.000Z", "2020-09-02T05:02:23.000Z") // User |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdPut(context.Background(), userId).User(user).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdPut`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdPut(context.Background(), userId).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdPut`: User
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdPut`: %v\n", resp)
 }
 ```
 
@@ -805,7 +805,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -815,7 +815,7 @@ Other parameters are passed through a pointer to a apiUserUserIdPutRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **user** | [**User**](User.md) |  | 
+ **user** | [**User**](User.md) |  |
 
 ### Return type
 
@@ -849,24 +849,24 @@ Get quotas for a specific user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdQuotaGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdQuotaGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdQuotaGet`: UserUserIdQuotaGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdQuotaGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdQuotaGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdQuotaGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdQuotaGet`: UserUserIdQuotaGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdQuotaGet`: %v\n", resp)
 }
 ```
 
@@ -876,7 +876,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -919,26 +919,26 @@ Get requests for a specific user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    take := float32(20) // float32 |  (optional)
-    skip := float32(0) // float32 |  (optional)
+	userId := float32(8.14) // float32 |
+	take := float32(20) // float32 |  (optional)
+	skip := float32(0) // float32 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdRequestsGet(context.Background(), userId).Take(take).Skip(skip).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdRequestsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdRequestsGet`: UserUserIdRequestsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdRequestsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdRequestsGet(context.Background(), userId).Take(take).Skip(skip).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdRequestsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdRequestsGet`: UserUserIdRequestsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdRequestsGet`: %v\n", resp)
 }
 ```
 
@@ -948,7 +948,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -958,8 +958,8 @@ Other parameters are passed through a pointer to a apiUserUserIdRequestsGetReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **take** | **float32** |  | 
- **skip** | **float32** |  | 
+ **take** | **float32** |  |
+ **skip** | **float32** |  |
 
 ### Return type
 
@@ -993,24 +993,24 @@ Get general settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsMainGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsMainGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsMainGet`: UserUserIdSettingsMainGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsMainGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsMainGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsMainGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsMainGet`: UserUserIdSettingsMainGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsMainGet`: %v\n", resp)
 }
 ```
 
@@ -1020,7 +1020,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1063,25 +1063,25 @@ Update general settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    userUserIdSettingsMainPostRequest := *openapiclient.NewUserUserIdSettingsMainPostRequest() // UserUserIdSettingsMainPostRequest | 
+	userId := float32(8.14) // float32 |
+	userUserIdSettingsMainPostRequest := *openapiclient.NewUserUserIdSettingsMainPostRequest() // UserUserIdSettingsMainPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsMainPost(context.Background(), userId).UserUserIdSettingsMainPostRequest(userUserIdSettingsMainPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsMainPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsMainPost`: UserUserIdSettingsMainGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsMainPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsMainPost(context.Background(), userId).UserUserIdSettingsMainPostRequest(userUserIdSettingsMainPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsMainPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsMainPost`: UserUserIdSettingsMainGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsMainPost`: %v\n", resp)
 }
 ```
 
@@ -1091,7 +1091,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1101,7 +1101,7 @@ Other parameters are passed through a pointer to a apiUserUserIdSettingsMainPost
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **userUserIdSettingsMainPostRequest** | [**UserUserIdSettingsMainPostRequest**](UserUserIdSettingsMainPostRequest.md) |  | 
+ **userUserIdSettingsMainPostRequest** | [**UserUserIdSettingsMainPostRequest**](UserUserIdSettingsMainPostRequest.md) |  |
 
 ### Return type
 
@@ -1135,24 +1135,24 @@ Get notification settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsNotificationsGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsNotificationsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsNotificationsGet`: UserSettingsNotifications
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsNotificationsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsNotificationsGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsNotificationsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsNotificationsGet`: UserSettingsNotifications
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsNotificationsGet`: %v\n", resp)
 }
 ```
 
@@ -1162,7 +1162,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1205,25 +1205,25 @@ Update notification settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    userSettingsNotifications := *openapiclient.NewUserSettingsNotifications() // UserSettingsNotifications | 
+	userId := float32(8.14) // float32 |
+	userSettingsNotifications := *openapiclient.NewUserSettingsNotifications() // UserSettingsNotifications |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsNotificationsPost(context.Background(), userId).UserSettingsNotifications(userSettingsNotifications).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsNotificationsPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsNotificationsPost`: UserSettingsNotifications
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsNotificationsPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsNotificationsPost(context.Background(), userId).UserSettingsNotifications(userSettingsNotifications).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsNotificationsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsNotificationsPost`: UserSettingsNotifications
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsNotificationsPost`: %v\n", resp)
 }
 ```
 
@@ -1233,7 +1233,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1243,7 +1243,7 @@ Other parameters are passed through a pointer to a apiUserUserIdSettingsNotifica
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **userSettingsNotifications** | [**UserSettingsNotifications**](UserSettingsNotifications.md) |  | 
+ **userSettingsNotifications** | [**UserSettingsNotifications**](UserSettingsNotifications.md) |  |
 
 ### Return type
 
@@ -1277,24 +1277,24 @@ Get password page informatiom
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPasswordGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPasswordGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsPasswordGet`: UserUserIdSettingsPasswordGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPasswordGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPasswordGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPasswordGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsPasswordGet`: UserUserIdSettingsPasswordGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPasswordGet`: %v\n", resp)
 }
 ```
 
@@ -1304,7 +1304,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1347,23 +1347,23 @@ Update password for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    userUserIdSettingsPasswordPostRequest := *openapiclient.NewUserUserIdSettingsPasswordPostRequest("NewPassword_example") // UserUserIdSettingsPasswordPostRequest | 
+	userId := float32(8.14) // float32 |
+	userUserIdSettingsPasswordPostRequest := *openapiclient.NewUserUserIdSettingsPasswordPostRequest("NewPassword_example") // UserUserIdSettingsPasswordPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersAPI.UserUserIdSettingsPasswordPost(context.Background(), userId).UserUserIdSettingsPasswordPostRequest(userUserIdSettingsPasswordPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPasswordPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UserUserIdSettingsPasswordPost(context.Background(), userId).UserUserIdSettingsPasswordPostRequest(userUserIdSettingsPasswordPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPasswordPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1373,7 +1373,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1383,7 +1383,7 @@ Other parameters are passed through a pointer to a apiUserUserIdSettingsPassword
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **userUserIdSettingsPasswordPostRequest** | [**UserUserIdSettingsPasswordPostRequest**](UserUserIdSettingsPasswordPostRequest.md) |  | 
+ **userUserIdSettingsPasswordPostRequest** | [**UserUserIdSettingsPasswordPostRequest**](UserUserIdSettingsPasswordPostRequest.md) |  |
 
 ### Return type
 
@@ -1417,24 +1417,24 @@ Get permission settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPermissionsGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPermissionsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsPermissionsGet`: UserUserIdSettingsPermissionsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPermissionsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPermissionsGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPermissionsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsPermissionsGet`: UserUserIdSettingsPermissionsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPermissionsGet`: %v\n", resp)
 }
 ```
 
@@ -1444,7 +1444,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1487,25 +1487,25 @@ Update permission settings for a user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    userUserIdSettingsPermissionsPostRequest := *openapiclient.NewUserUserIdSettingsPermissionsPostRequest(float32(123)) // UserUserIdSettingsPermissionsPostRequest | 
+	userId := float32(8.14) // float32 |
+	userUserIdSettingsPermissionsPostRequest := *openapiclient.NewUserUserIdSettingsPermissionsPostRequest(float32(123)) // UserUserIdSettingsPermissionsPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPermissionsPost(context.Background(), userId).UserUserIdSettingsPermissionsPostRequest(userUserIdSettingsPermissionsPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPermissionsPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdSettingsPermissionsPost`: UserUserIdSettingsPermissionsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPermissionsPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdSettingsPermissionsPost(context.Background(), userId).UserUserIdSettingsPermissionsPostRequest(userUserIdSettingsPermissionsPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdSettingsPermissionsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdSettingsPermissionsPost`: UserUserIdSettingsPermissionsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdSettingsPermissionsPost`: %v\n", resp)
 }
 ```
 
@@ -1515,7 +1515,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1525,7 +1525,7 @@ Other parameters are passed through a pointer to a apiUserUserIdSettingsPermissi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **userUserIdSettingsPermissionsPostRequest** | [**UserUserIdSettingsPermissionsPostRequest**](UserUserIdSettingsPermissionsPostRequest.md) |  | 
+ **userUserIdSettingsPermissionsPostRequest** | [**UserUserIdSettingsPermissionsPostRequest**](UserUserIdSettingsPermissionsPostRequest.md) |  |
 
 ### Return type
 
@@ -1559,24 +1559,24 @@ Get watch data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
+	userId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdWatchDataGet(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdWatchDataGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdWatchDataGet`: UserUserIdWatchDataGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdWatchDataGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdWatchDataGet(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdWatchDataGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdWatchDataGet`: UserUserIdWatchDataGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdWatchDataGet`: %v\n", resp)
 }
 ```
 
@@ -1586,7 +1586,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1629,25 +1629,25 @@ Get the Plex watchlist for a specific user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    userId := float32(8.14) // float32 | 
-    page := float32(1) // float32 |  (optional) (default to 1)
+	userId := float32(8.14) // float32 |
+	page := float32(1) // float32 |  (optional) (default to 1)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersAPI.UserUserIdWatchlistGet(context.Background(), userId).Page(page).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdWatchlistGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserUserIdWatchlistGet`: UserUserIdWatchlistGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdWatchlistGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UserUserIdWatchlistGet(context.Background(), userId).Page(page).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UserUserIdWatchlistGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUserIdWatchlistGet`: UserUserIdWatchlistGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UserUserIdWatchlistGet`: %v\n", resp)
 }
 ```
 
@@ -1657,7 +1657,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **float32** |  | 
+**userId** | **float32** |  |
 
 ### Other Parameters
 
@@ -1685,4 +1685,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

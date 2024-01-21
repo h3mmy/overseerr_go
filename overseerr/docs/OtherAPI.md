@@ -25,24 +25,24 @@ Get keyword
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    keywordId := float32(1) // float32 | 
+	keywordId := float32(1) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtherAPI.KeywordKeywordIdGet(context.Background(), keywordId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.KeywordKeywordIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `KeywordKeywordIdGet`: Keyword
-    fmt.Fprintf(os.Stdout, "Response from `OtherAPI.KeywordKeywordIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OtherAPI.KeywordKeywordIdGet(context.Background(), keywordId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.KeywordKeywordIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `KeywordKeywordIdGet`: Keyword
+	fmt.Fprintf(os.Stdout, "Response from `OtherAPI.KeywordKeywordIdGet`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keywordId** | **float32** |  | 
+**keywordId** | **float32** |  |
 
 ### Other Parameters
 
@@ -95,24 +95,24 @@ Get watch provider movies
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    watchRegion := "US" // string | 
+	watchRegion := "US" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtherAPI.WatchprovidersMoviesGet(context.Background()).WatchRegion(watchRegion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersMoviesGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `WatchprovidersMoviesGet`: []WatchProviderDetails
-    fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersMoviesGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OtherAPI.WatchprovidersMoviesGet(context.Background()).WatchRegion(watchRegion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersMoviesGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WatchprovidersMoviesGet`: []WatchProviderDetails
+	fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersMoviesGet`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Other parameters are passed through a pointer to a apiWatchprovidersMoviesGetReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watchRegion** | **string** |  | 
+ **watchRegion** | **string** |  |
 
 ### Return type
 
@@ -161,23 +161,23 @@ Get watch provider regions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtherAPI.WatchprovidersRegionsGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersRegionsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `WatchprovidersRegionsGet`: []WatchProviderRegion
-    fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersRegionsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OtherAPI.WatchprovidersRegionsGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersRegionsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WatchprovidersRegionsGet`: []WatchProviderRegion
+	fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersRegionsGet`: %v\n", resp)
 }
 ```
 
@@ -222,24 +222,24 @@ Get watch provider series
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    watchRegion := "US" // string | 
+	watchRegion := "US" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtherAPI.WatchprovidersTvGet(context.Background()).WatchRegion(watchRegion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersTvGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `WatchprovidersTvGet`: []WatchProviderDetails
-    fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersTvGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OtherAPI.WatchprovidersTvGet(context.Background()).WatchRegion(watchRegion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OtherAPI.WatchprovidersTvGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WatchprovidersTvGet`: []WatchProviderDetails
+	fmt.Fprintf(os.Stdout, "Response from `OtherAPI.WatchprovidersTvGet`: %v\n", resp)
 }
 ```
 
@@ -254,7 +254,7 @@ Other parameters are passed through a pointer to a apiWatchprovidersTvGetRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watchRegion** | **string** |  | 
+ **watchRegion** | **string** |  |
 
 ### Return type
 
@@ -272,4 +272,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

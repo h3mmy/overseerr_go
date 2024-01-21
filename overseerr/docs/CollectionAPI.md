@@ -22,25 +22,25 @@ Get collection details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    collectionId := float32(537982) // float32 | 
-    language := "en" // string |  (optional)
+	collectionId := float32(537982) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CollectionAPI.CollectionCollectionIdGet(context.Background(), collectionId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CollectionAPI.CollectionCollectionIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CollectionCollectionIdGet`: Collection
-    fmt.Fprintf(os.Stdout, "Response from `CollectionAPI.CollectionCollectionIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CollectionAPI.CollectionCollectionIdGet(context.Background(), collectionId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CollectionAPI.CollectionCollectionIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CollectionCollectionIdGet`: Collection
+	fmt.Fprintf(os.Stdout, "Response from `CollectionAPI.CollectionCollectionIdGet`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**collectionId** | **float32** |  | 
+**collectionId** | **float32** |  |
 
 ### Other Parameters
 
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiCollectionCollectionIdGetR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -78,4 +78,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

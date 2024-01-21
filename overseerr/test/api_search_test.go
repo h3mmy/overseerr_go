@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func Test_overseerr_go_SearchAPIService(t *testing.T) {

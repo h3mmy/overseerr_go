@@ -13,6 +13,7 @@ package overseerr_go
 import (
 	"encoding/json"
 	"fmt"
+	"bytes"
 )
 
 // PersonResultKnownForInner - struct for PersonResultKnownForInner

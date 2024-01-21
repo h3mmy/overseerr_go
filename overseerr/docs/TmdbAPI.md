@@ -28,23 +28,23 @@ Get backdrops of trending items
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.BackdropsGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.BackdropsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `BackdropsGet`: []string
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.BackdropsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.BackdropsGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.BackdropsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BackdropsGet`: []string
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.BackdropsGet`: %v\n", resp)
 }
 ```
 
@@ -89,24 +89,24 @@ Get list of official TMDB movie genres
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    language := "en" // string |  (optional)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.GenresMovieGet(context.Background()).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.GenresMovieGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GenresMovieGet`: []GenresMovieGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.GenresMovieGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.GenresMovieGet(context.Background()).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.GenresMovieGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GenresMovieGet`: []GenresMovieGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.GenresMovieGet`: %v\n", resp)
 }
 ```
 
@@ -121,7 +121,7 @@ Other parameters are passed through a pointer to a apiGenresMovieGetRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -155,24 +155,24 @@ Get list of official TMDB movie genres
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    language := "en" // string |  (optional)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.GenresTvGet(context.Background()).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.GenresTvGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GenresTvGet`: []GenresTvGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.GenresTvGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.GenresTvGet(context.Background()).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.GenresTvGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GenresTvGet`: []GenresTvGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.GenresTvGet`: %v\n", resp)
 }
 ```
 
@@ -187,7 +187,7 @@ Other parameters are passed through a pointer to a apiGenresTvGetRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -221,23 +221,23 @@ Languages supported by TMDB
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.LanguagesGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.LanguagesGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `LanguagesGet`: []LanguagesGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.LanguagesGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.LanguagesGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.LanguagesGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `LanguagesGet`: []LanguagesGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.LanguagesGet`: %v\n", resp)
 }
 ```
 
@@ -282,24 +282,24 @@ Get TV network details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    networkId := float32(1) // float32 | 
+	networkId := float32(1) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.NetworkNetworkIdGet(context.Background(), networkId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.NetworkNetworkIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `NetworkNetworkIdGet`: ProductionCompany
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.NetworkNetworkIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.NetworkNetworkIdGet(context.Background(), networkId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.NetworkNetworkIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `NetworkNetworkIdGet`: ProductionCompany
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.NetworkNetworkIdGet`: %v\n", resp)
 }
 ```
 
@@ -309,7 +309,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**networkId** | **float32** |  | 
+**networkId** | **float32** |  |
 
 ### Other Parameters
 
@@ -352,23 +352,23 @@ Regions supported by TMDB
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.RegionsGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.RegionsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RegionsGet`: []RegionsGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.RegionsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.RegionsGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.RegionsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RegionsGet`: []RegionsGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.RegionsGet`: %v\n", resp)
 }
 ```
 
@@ -413,24 +413,24 @@ Get movie studio details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    studioId := float32(2) // float32 | 
+	studioId := float32(2) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TmdbAPI.StudioStudioIdGet(context.Background(), studioId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.StudioStudioIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `StudioStudioIdGet`: ProductionCompany
-    fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.StudioStudioIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TmdbAPI.StudioStudioIdGet(context.Background(), studioId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.StudioStudioIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StudioStudioIdGet`: ProductionCompany
+	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.StudioStudioIdGet`: %v\n", resp)
 }
 ```
 
@@ -440,7 +440,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**studioId** | **float32** |  | 
+**studioId** | **float32** |  |
 
 ### Other Parameters
 
@@ -467,4 +467,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

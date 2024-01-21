@@ -6,7 +6,7 @@ These are clients generated from one or more open-api specs and the [openapi-gen
 
 | Client for | [overseerr](https://github.com/sct/overseerr) |
 | OpenAPI Spec | [https://api-docs.overseerr.dev/overseerr-api.yml] |
-| Command | `openapi-generator-cli generate -o overseerr -i https://api-docs.overseerr.dev/overseerr-api.yml -g go` |
+| Command | `openapi-generator-cli generate -o overseerr -i https://api-docs.overseerr.dev/overseerr-api.yml -g go --skip-validate-spec --additional-properties="withGoMod=true,packageName=overseerr_go,structPrefix=true"` |
 
 This was on hold because overseerr is using an "invalid" spec.
 

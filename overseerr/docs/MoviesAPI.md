@@ -26,25 +26,25 @@ Get movie details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    movieId := float32(337401) // float32 | 
-    language := "en" // string |  (optional)
+	movieId := float32(337401) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MoviesAPI.MovieMovieIdGet(context.Background(), movieId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MovieMovieIdGet`: MovieDetails
-    fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MoviesAPI.MovieMovieIdGet(context.Background(), movieId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MovieMovieIdGet`: MovieDetails
+	fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdGet`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**movieId** | **float32** |  | 
+**movieId** | **float32** |  |
 
 ### Other Parameters
 
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiMovieMovieIdGetRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -98,24 +98,24 @@ Get movie ratings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    movieId := float32(337401) // float32 | 
+	movieId := float32(337401) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MoviesAPI.MovieMovieIdRatingsGet(context.Background(), movieId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRatingsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MovieMovieIdRatingsGet`: MovieMovieIdRatingsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRatingsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MoviesAPI.MovieMovieIdRatingsGet(context.Background(), movieId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRatingsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MovieMovieIdRatingsGet`: MovieMovieIdRatingsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRatingsGet`: %v\n", resp)
 }
 ```
 
@@ -125,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**movieId** | **float32** |  | 
+**movieId** | **float32** |  |
 
 ### Other Parameters
 
@@ -168,24 +168,24 @@ Get RT and IMDB movie ratings combined
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    movieId := float32(337401) // float32 | 
+	movieId := float32(337401) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MoviesAPI.MovieMovieIdRatingscombinedGet(context.Background(), movieId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRatingscombinedGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MovieMovieIdRatingscombinedGet`: MovieMovieIdRatingscombinedGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRatingscombinedGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MoviesAPI.MovieMovieIdRatingscombinedGet(context.Background(), movieId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRatingscombinedGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MovieMovieIdRatingscombinedGet`: MovieMovieIdRatingscombinedGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRatingscombinedGet`: %v\n", resp)
 }
 ```
 
@@ -195,7 +195,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**movieId** | **float32** |  | 
+**movieId** | **float32** |  |
 
 ### Other Parameters
 
@@ -238,26 +238,26 @@ Get recommended movies
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    movieId := float32(337401) // float32 | 
-    page := float32(1) // float32 |  (optional) (default to 1)
-    language := "en" // string |  (optional)
+	movieId := float32(337401) // float32 |
+	page := float32(1) // float32 |  (optional) (default to 1)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MoviesAPI.MovieMovieIdRecommendationsGet(context.Background(), movieId).Page(page).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRecommendationsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MovieMovieIdRecommendationsGet`: DiscoverMoviesGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRecommendationsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MoviesAPI.MovieMovieIdRecommendationsGet(context.Background(), movieId).Page(page).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdRecommendationsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MovieMovieIdRecommendationsGet`: DiscoverMoviesGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdRecommendationsGet`: %v\n", resp)
 }
 ```
 
@@ -267,7 +267,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**movieId** | **float32** |  | 
+**movieId** | **float32** |  |
 
 ### Other Parameters
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **page** | **float32** |  | [default to 1]
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -312,26 +312,26 @@ Get similar movies
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    movieId := float32(337401) // float32 | 
-    page := float32(1) // float32 |  (optional) (default to 1)
-    language := "en" // string |  (optional)
+	movieId := float32(337401) // float32 |
+	page := float32(1) // float32 |  (optional) (default to 1)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MoviesAPI.MovieMovieIdSimilarGet(context.Background(), movieId).Page(page).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdSimilarGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MovieMovieIdSimilarGet`: DiscoverMoviesGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdSimilarGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MoviesAPI.MovieMovieIdSimilarGet(context.Background(), movieId).Page(page).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MoviesAPI.MovieMovieIdSimilarGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MovieMovieIdSimilarGet`: DiscoverMoviesGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MoviesAPI.MovieMovieIdSimilarGet`: %v\n", resp)
 }
 ```
 
@@ -341,7 +341,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**movieId** | **float32** |  | 
+**movieId** | **float32** |  |
 
 ### Other Parameters
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **page** | **float32** |  | [default to 1]
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -370,4 +370,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

@@ -13,6 +13,7 @@ package overseerr_go
 import (
 	"encoding/json"
 	"fmt"
+	"bytes"
 )
 
 // SearchGet200ResponseResultsInner struct for SearchGet200ResponseResultsInner

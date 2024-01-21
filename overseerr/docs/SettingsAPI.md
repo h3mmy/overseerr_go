@@ -91,23 +91,23 @@ Get server stats
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsAboutGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsAboutGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsAboutGet`: SettingsAboutGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsAboutGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsAboutGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsAboutGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsAboutGet`: SettingsAboutGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsAboutGet`: %v\n", resp)
 }
 ```
 
@@ -152,22 +152,22 @@ Flush a specific cache
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    cacheId := "cacheId_example" // string | 
+	cacheId := "cacheId_example" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsCacheCacheIdFlushPost(context.Background(), cacheId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsCacheCacheIdFlushPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsCacheCacheIdFlushPost(context.Background(), cacheId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsCacheCacheIdFlushPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -177,7 +177,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cacheId** | **string** |  | 
+**cacheId** | **string** |  |
 
 ### Other Parameters
 
@@ -220,23 +220,23 @@ Get a list of active caches
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsCacheGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsCacheGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsCacheGet`: SettingsCacheGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsCacheGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsCacheGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsCacheGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsCacheGet`: SettingsCacheGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsCacheGet`: %v\n", resp)
 }
 ```
 
@@ -281,24 +281,24 @@ Add a new slider
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    settingsDiscoverAddPostRequest := *openapiclient.NewSettingsDiscoverAddPostRequest() // SettingsDiscoverAddPostRequest | 
+	settingsDiscoverAddPostRequest := *openapiclient.NewSettingsDiscoverAddPostRequest() // SettingsDiscoverAddPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsDiscoverAddPost(context.Background()).SettingsDiscoverAddPostRequest(settingsDiscoverAddPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverAddPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsDiscoverAddPost`: DiscoverSlider
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverAddPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsDiscoverAddPost(context.Background()).SettingsDiscoverAddPostRequest(settingsDiscoverAddPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverAddPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsDiscoverAddPost`: DiscoverSlider
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverAddPost`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Other parameters are passed through a pointer to a apiSettingsDiscoverAddPostReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settingsDiscoverAddPostRequest** | [**SettingsDiscoverAddPostRequest**](SettingsDiscoverAddPostRequest.md) |  | 
+ **settingsDiscoverAddPostRequest** | [**SettingsDiscoverAddPostRequest**](SettingsDiscoverAddPostRequest.md) |  |
 
 ### Return type
 
@@ -347,23 +347,23 @@ Get all discover sliders
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsDiscoverGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsDiscoverGet`: []DiscoverSlider
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsDiscoverGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsDiscoverGet`: []DiscoverSlider
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverGet`: %v\n", resp)
 }
 ```
 
@@ -408,24 +408,24 @@ Batch update all sliders.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    discoverSlider := []openapiclient.DiscoverSlider{*openapiclient.NewDiscoverSlider(float32(1), "Title_example", false, "1234")} // []DiscoverSlider | 
+	discoverSlider := []openapiclient.DiscoverSlider{*openapiclient.NewDiscoverSlider(float32(1), "Title_example", false, "1234")} // []DiscoverSlider |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsDiscoverPost(context.Background()).DiscoverSlider(discoverSlider).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsDiscoverPost`: []DiscoverSlider
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsDiscoverPost(context.Background()).DiscoverSlider(discoverSlider).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsDiscoverPost`: []DiscoverSlider
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverPost`: %v\n", resp)
 }
 ```
 
@@ -440,7 +440,7 @@ Other parameters are passed through a pointer to a apiSettingsDiscoverPostReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **discoverSlider** | [**[]DiscoverSlider**](DiscoverSlider.md) |  | 
+ **discoverSlider** | [**[]DiscoverSlider**](DiscoverSlider.md) |  |
 
 ### Return type
 
@@ -474,21 +474,21 @@ Reset all discover sliders
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsDiscoverResetGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverResetGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsDiscoverResetGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverResetGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -533,24 +533,24 @@ Delete slider by ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sliderId := float32(8.14) // float32 | 
+	sliderId := float32(8.14) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsDiscoverSliderIdDelete(context.Background(), sliderId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverSliderIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsDiscoverSliderIdDelete`: DiscoverSlider
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverSliderIdDelete`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsDiscoverSliderIdDelete(context.Background(), sliderId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverSliderIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsDiscoverSliderIdDelete`: DiscoverSlider
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverSliderIdDelete`: %v\n", resp)
 }
 ```
 
@@ -560,7 +560,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**sliderId** | **float32** |  | 
+**sliderId** | **float32** |  |
 
 ### Other Parameters
 
@@ -603,24 +603,24 @@ Update a single slider
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    settingsDiscoverSliderIdPutRequest := *openapiclient.NewSettingsDiscoverSliderIdPutRequest() // SettingsDiscoverSliderIdPutRequest | 
+	settingsDiscoverSliderIdPutRequest := *openapiclient.NewSettingsDiscoverSliderIdPutRequest() // SettingsDiscoverSliderIdPutRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsDiscoverSliderIdPut(context.Background()).SettingsDiscoverSliderIdPutRequest(settingsDiscoverSliderIdPutRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverSliderIdPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsDiscoverSliderIdPut`: DiscoverSlider
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverSliderIdPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsDiscoverSliderIdPut(context.Background()).SettingsDiscoverSliderIdPutRequest(settingsDiscoverSliderIdPutRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsDiscoverSliderIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsDiscoverSliderIdPut`: DiscoverSlider
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsDiscoverSliderIdPut`: %v\n", resp)
 }
 ```
 
@@ -635,7 +635,7 @@ Other parameters are passed through a pointer to a apiSettingsDiscoverSliderIdPu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settingsDiscoverSliderIdPutRequest** | [**SettingsDiscoverSliderIdPutRequest**](SettingsDiscoverSliderIdPutRequest.md) |  | 
+ **settingsDiscoverSliderIdPutRequest** | [**SettingsDiscoverSliderIdPutRequest**](SettingsDiscoverSliderIdPutRequest.md) |  |
 
 ### Return type
 
@@ -669,23 +669,23 @@ Initialize application
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsInitializePost(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsInitializePost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsInitializePost`: PublicSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsInitializePost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsInitializePost(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsInitializePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsInitializePost`: PublicSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsInitializePost`: %v\n", resp)
 }
 ```
 
@@ -730,23 +730,23 @@ Get scheduled jobs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsJobsGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsJobsGet`: []Job
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsJobsGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsJobsGet`: []Job
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsGet`: %v\n", resp)
 }
 ```
 
@@ -791,24 +791,24 @@ Cancel a specific job
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    jobId := "jobId_example" // string | 
+	jobId := "jobId_example" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdCancelPost(context.Background(), jobId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdCancelPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsJobsJobIdCancelPost`: Job
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdCancelPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdCancelPost(context.Background(), jobId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdCancelPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsJobsJobIdCancelPost`: Job
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdCancelPost`: %v\n", resp)
 }
 ```
 
@@ -818,7 +818,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jobId** | **string** |  | 
+**jobId** | **string** |  |
 
 ### Other Parameters
 
@@ -861,24 +861,24 @@ Invoke a specific job
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    jobId := "jobId_example" // string | 
+	jobId := "jobId_example" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdRunPost(context.Background(), jobId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdRunPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsJobsJobIdRunPost`: Job
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdRunPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdRunPost(context.Background(), jobId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdRunPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsJobsJobIdRunPost`: Job
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdRunPost`: %v\n", resp)
 }
 ```
 
@@ -888,7 +888,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jobId** | **string** |  | 
+**jobId** | **string** |  |
 
 ### Other Parameters
 
@@ -931,25 +931,25 @@ Modify job schedule
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    jobId := "jobId_example" // string | 
-    settingsJobsJobIdSchedulePostRequest := *openapiclient.NewSettingsJobsJobIdSchedulePostRequest() // SettingsJobsJobIdSchedulePostRequest | 
+	jobId := "jobId_example" // string |
+	settingsJobsJobIdSchedulePostRequest := *openapiclient.NewSettingsJobsJobIdSchedulePostRequest() // SettingsJobsJobIdSchedulePostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdSchedulePost(context.Background(), jobId).SettingsJobsJobIdSchedulePostRequest(settingsJobsJobIdSchedulePostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdSchedulePost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsJobsJobIdSchedulePost`: Job
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdSchedulePost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsJobsJobIdSchedulePost(context.Background(), jobId).SettingsJobsJobIdSchedulePostRequest(settingsJobsJobIdSchedulePostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsJobsJobIdSchedulePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsJobsJobIdSchedulePost`: Job
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsJobsJobIdSchedulePost`: %v\n", resp)
 }
 ```
 
@@ -959,7 +959,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jobId** | **string** |  | 
+**jobId** | **string** |  |
 
 ### Other Parameters
 
@@ -969,7 +969,7 @@ Other parameters are passed through a pointer to a apiSettingsJobsJobIdScheduleP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **settingsJobsJobIdSchedulePostRequest** | [**SettingsJobsJobIdSchedulePostRequest**](SettingsJobsJobIdSchedulePostRequest.md) |  | 
+ **settingsJobsJobIdSchedulePostRequest** | [**SettingsJobsJobIdSchedulePostRequest**](SettingsJobsJobIdSchedulePostRequest.md) |  |
 
 ### Return type
 
@@ -1003,27 +1003,27 @@ Returns logs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    take := float32(25) // float32 |  (optional)
-    skip := float32(0) // float32 |  (optional)
-    filter := "filter_example" // string |  (optional) (default to "debug")
-    search := "plex" // string |  (optional)
+	take := float32(25) // float32 |  (optional)
+	skip := float32(0) // float32 |  (optional)
+	filter := "filter_example" // string |  (optional) (default to "debug")
+	search := "plex" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsLogsGet(context.Background()).Take(take).Skip(skip).Filter(filter).Search(search).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsLogsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsLogsGet`: []SettingsLogsGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsLogsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsLogsGet(context.Background()).Take(take).Skip(skip).Filter(filter).Search(search).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsLogsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsLogsGet`: []SettingsLogsGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsLogsGet`: %v\n", resp)
 }
 ```
 
@@ -1038,10 +1038,10 @@ Other parameters are passed through a pointer to a apiSettingsLogsGetRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **take** | **float32** |  | 
- **skip** | **float32** |  | 
+ **take** | **float32** |  |
+ **skip** | **float32** |  |
  **filter** | **string** |  | [default to &quot;debug&quot;]
- **search** | **string** |  | 
+ **search** | **string** |  |
 
 ### Return type
 
@@ -1075,23 +1075,23 @@ Get main settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsMainGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsMainGet`: MainSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsMainGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsMainGet`: MainSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainGet`: %v\n", resp)
 }
 ```
 
@@ -1136,24 +1136,24 @@ Update main settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    mainSettings := *openapiclient.NewMainSettings() // MainSettings | 
+	mainSettings := *openapiclient.NewMainSettings() // MainSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsMainPost(context.Background()).MainSettings(mainSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsMainPost`: MainSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsMainPost(context.Background()).MainSettings(mainSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsMainPost`: MainSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainPost`: %v\n", resp)
 }
 ```
 
@@ -1168,7 +1168,7 @@ Other parameters are passed through a pointer to a apiSettingsMainPostRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mainSettings** | [**MainSettings**](MainSettings.md) |  | 
+ **mainSettings** | [**MainSettings**](MainSettings.md) |  |
 
 ### Return type
 
@@ -1202,23 +1202,23 @@ Get main settings with newly-generated API key
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsMainRegeneratePost(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainRegeneratePost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsMainRegeneratePost`: MainSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainRegeneratePost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsMainRegeneratePost(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsMainRegeneratePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsMainRegeneratePost`: MainSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsMainRegeneratePost`: %v\n", resp)
 }
 ```
 
@@ -1263,23 +1263,23 @@ Get Discord notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsDiscordGet`: DiscordSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsDiscordGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsDiscordGet`: DiscordSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsDiscordGet`: %v\n", resp)
 }
 ```
 
@@ -1324,24 +1324,24 @@ Update Discord notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    discordSettings := *openapiclient.NewDiscordSettings() // DiscordSettings | 
+	discordSettings := *openapiclient.NewDiscordSettings() // DiscordSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordPost(context.Background()).DiscordSettings(discordSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsDiscordPost`: DiscordSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsDiscordPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordPost(context.Background()).DiscordSettings(discordSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsDiscordPost`: DiscordSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsDiscordPost`: %v\n", resp)
 }
 ```
 
@@ -1356,7 +1356,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsDisco
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **discordSettings** | [**DiscordSettings**](DiscordSettings.md) |  | 
+ **discordSettings** | [**DiscordSettings**](DiscordSettings.md) |  |
 
 ### Return type
 
@@ -1390,22 +1390,22 @@ Test Discord settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    discordSettings := *openapiclient.NewDiscordSettings() // DiscordSettings | 
+	discordSettings := *openapiclient.NewDiscordSettings() // DiscordSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordTestPost(context.Background()).DiscordSettings(discordSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsDiscordTestPost(context.Background()).DiscordSettings(discordSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsDiscordTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1420,7 +1420,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsDisco
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **discordSettings** | [**DiscordSettings**](DiscordSettings.md) |  | 
+ **discordSettings** | [**DiscordSettings**](DiscordSettings.md) |  |
 
 ### Return type
 
@@ -1454,23 +1454,23 @@ Get email notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsEmailGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsEmailGet`: NotificationEmailSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsEmailGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsEmailGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsEmailGet`: NotificationEmailSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsEmailGet`: %v\n", resp)
 }
 ```
 
@@ -1515,24 +1515,24 @@ Update email notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    notificationEmailSettings := *openapiclient.NewNotificationEmailSettings() // NotificationEmailSettings | 
+	notificationEmailSettings := *openapiclient.NewNotificationEmailSettings() // NotificationEmailSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsEmailPost(context.Background()).NotificationEmailSettings(notificationEmailSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsEmailPost`: NotificationEmailSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsEmailPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsEmailPost(context.Background()).NotificationEmailSettings(notificationEmailSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsEmailPost`: NotificationEmailSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsEmailPost`: %v\n", resp)
 }
 ```
 
@@ -1547,7 +1547,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsEmail
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationEmailSettings** | [**NotificationEmailSettings**](NotificationEmailSettings.md) |  | 
+ **notificationEmailSettings** | [**NotificationEmailSettings**](NotificationEmailSettings.md) |  |
 
 ### Return type
 
@@ -1581,22 +1581,22 @@ Test email settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    notificationEmailSettings := *openapiclient.NewNotificationEmailSettings() // NotificationEmailSettings | 
+	notificationEmailSettings := *openapiclient.NewNotificationEmailSettings() // NotificationEmailSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsEmailTestPost(context.Background()).NotificationEmailSettings(notificationEmailSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsEmailTestPost(context.Background()).NotificationEmailSettings(notificationEmailSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsEmailTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1611,7 +1611,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsEmail
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationEmailSettings** | [**NotificationEmailSettings**](NotificationEmailSettings.md) |  | 
+ **notificationEmailSettings** | [**NotificationEmailSettings**](NotificationEmailSettings.md) |  |
 
 ### Return type
 
@@ -1645,23 +1645,23 @@ Get Gotify notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsGotifyGet`: GotifySettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsGotifyGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsGotifyGet`: GotifySettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsGotifyGet`: %v\n", resp)
 }
 ```
 
@@ -1706,24 +1706,24 @@ Update Gotify notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    gotifySettings := *openapiclient.NewGotifySettings() // GotifySettings | 
+	gotifySettings := *openapiclient.NewGotifySettings() // GotifySettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyPost(context.Background()).GotifySettings(gotifySettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsGotifyPost`: GotifySettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsGotifyPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyPost(context.Background()).GotifySettings(gotifySettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsGotifyPost`: GotifySettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsGotifyPost`: %v\n", resp)
 }
 ```
 
@@ -1738,7 +1738,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsGotif
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gotifySettings** | [**GotifySettings**](GotifySettings.md) |  | 
+ **gotifySettings** | [**GotifySettings**](GotifySettings.md) |  |
 
 ### Return type
 
@@ -1772,22 +1772,22 @@ Test Gotify settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    gotifySettings := *openapiclient.NewGotifySettings() // GotifySettings | 
+	gotifySettings := *openapiclient.NewGotifySettings() // GotifySettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyTestPost(context.Background()).GotifySettings(gotifySettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsGotifyTestPost(context.Background()).GotifySettings(gotifySettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsGotifyTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1802,7 +1802,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsGotif
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gotifySettings** | [**GotifySettings**](GotifySettings.md) |  | 
+ **gotifySettings** | [**GotifySettings**](GotifySettings.md) |  |
 
 ### Return type
 
@@ -1836,23 +1836,23 @@ Get LunaSea notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsLunaseaGet`: LunaSeaSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsLunaseaGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsLunaseaGet`: LunaSeaSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsLunaseaGet`: %v\n", resp)
 }
 ```
 
@@ -1897,24 +1897,24 @@ Update LunaSea notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    lunaSeaSettings := *openapiclient.NewLunaSeaSettings() // LunaSeaSettings | 
+	lunaSeaSettings := *openapiclient.NewLunaSeaSettings() // LunaSeaSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaPost(context.Background()).LunaSeaSettings(lunaSeaSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsLunaseaPost`: LunaSeaSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsLunaseaPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaPost(context.Background()).LunaSeaSettings(lunaSeaSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsLunaseaPost`: LunaSeaSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsLunaseaPost`: %v\n", resp)
 }
 ```
 
@@ -1929,7 +1929,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsLunas
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lunaSeaSettings** | [**LunaSeaSettings**](LunaSeaSettings.md) |  | 
+ **lunaSeaSettings** | [**LunaSeaSettings**](LunaSeaSettings.md) |  |
 
 ### Return type
 
@@ -1963,22 +1963,22 @@ Test LunaSea settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    lunaSeaSettings := *openapiclient.NewLunaSeaSettings() // LunaSeaSettings | 
+	lunaSeaSettings := *openapiclient.NewLunaSeaSettings() // LunaSeaSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaTestPost(context.Background()).LunaSeaSettings(lunaSeaSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsLunaseaTestPost(context.Background()).LunaSeaSettings(lunaSeaSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsLunaseaTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1993,7 +1993,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsLunas
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lunaSeaSettings** | [**LunaSeaSettings**](LunaSeaSettings.md) |  | 
+ **lunaSeaSettings** | [**LunaSeaSettings**](LunaSeaSettings.md) |  |
 
 ### Return type
 
@@ -2027,23 +2027,23 @@ Get Pushbullet notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsPushbulletGet`: PushbulletSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushbulletGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsPushbulletGet`: PushbulletSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushbulletGet`: %v\n", resp)
 }
 ```
 
@@ -2088,24 +2088,24 @@ Update Pushbullet notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    pushbulletSettings := *openapiclient.NewPushbulletSettings() // PushbulletSettings | 
+	pushbulletSettings := *openapiclient.NewPushbulletSettings() // PushbulletSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletPost(context.Background()).PushbulletSettings(pushbulletSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsPushbulletPost`: PushbulletSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushbulletPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletPost(context.Background()).PushbulletSettings(pushbulletSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsPushbulletPost`: PushbulletSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushbulletPost`: %v\n", resp)
 }
 ```
 
@@ -2120,7 +2120,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsPushb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushbulletSettings** | [**PushbulletSettings**](PushbulletSettings.md) |  | 
+ **pushbulletSettings** | [**PushbulletSettings**](PushbulletSettings.md) |  |
 
 ### Return type
 
@@ -2154,22 +2154,22 @@ Test Pushbullet settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    pushbulletSettings := *openapiclient.NewPushbulletSettings() // PushbulletSettings | 
+	pushbulletSettings := *openapiclient.NewPushbulletSettings() // PushbulletSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletTestPost(context.Background()).PushbulletSettings(pushbulletSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsPushbulletTestPost(context.Background()).PushbulletSettings(pushbulletSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushbulletTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2184,7 +2184,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsPushb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushbulletSettings** | [**PushbulletSettings**](PushbulletSettings.md) |  | 
+ **pushbulletSettings** | [**PushbulletSettings**](PushbulletSettings.md) |  |
 
 ### Return type
 
@@ -2218,23 +2218,23 @@ Get Pushover notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsPushoverGet`: PushoverSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsPushoverGet`: PushoverSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverGet`: %v\n", resp)
 }
 ```
 
@@ -2279,24 +2279,24 @@ Update Pushover notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    pushoverSettings := *openapiclient.NewPushoverSettings() // PushoverSettings | 
+	pushoverSettings := *openapiclient.NewPushoverSettings() // PushoverSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverPost(context.Background()).PushoverSettings(pushoverSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsPushoverPost`: PushoverSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverPost(context.Background()).PushoverSettings(pushoverSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsPushoverPost`: PushoverSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverPost`: %v\n", resp)
 }
 ```
 
@@ -2311,7 +2311,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsPusho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushoverSettings** | [**PushoverSettings**](PushoverSettings.md) |  | 
+ **pushoverSettings** | [**PushoverSettings**](PushoverSettings.md) |  |
 
 ### Return type
 
@@ -2345,24 +2345,24 @@ Get Pushover sounds
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    token := "token_example" // string | 
+	token := "token_example" // string |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverSoundsGet(context.Background()).Token(token).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverSoundsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsPushoverSoundsGet`: []SettingsNotificationsPushoverSoundsGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverSoundsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverSoundsGet(context.Background()).Token(token).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverSoundsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsPushoverSoundsGet`: []SettingsNotificationsPushoverSoundsGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsPushoverSoundsGet`: %v\n", resp)
 }
 ```
 
@@ -2377,7 +2377,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsPusho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **string** |  | 
+ **token** | **string** |  |
 
 ### Return type
 
@@ -2411,22 +2411,22 @@ Test Pushover settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    pushoverSettings := *openapiclient.NewPushoverSettings() // PushoverSettings | 
+	pushoverSettings := *openapiclient.NewPushoverSettings() // PushoverSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverTestPost(context.Background()).PushoverSettings(pushoverSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsPushoverTestPost(context.Background()).PushoverSettings(pushoverSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsPushoverTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2441,7 +2441,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsPusho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushoverSettings** | [**PushoverSettings**](PushoverSettings.md) |  | 
+ **pushoverSettings** | [**PushoverSettings**](PushoverSettings.md) |  |
 
 ### Return type
 
@@ -2475,23 +2475,23 @@ Get Slack notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsSlackGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsSlackGet`: SlackSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsSlackGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsSlackGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsSlackGet`: SlackSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsSlackGet`: %v\n", resp)
 }
 ```
 
@@ -2536,24 +2536,24 @@ Update Slack notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    slackSettings := *openapiclient.NewSlackSettings() // SlackSettings | 
+	slackSettings := *openapiclient.NewSlackSettings() // SlackSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsSlackPost(context.Background()).SlackSettings(slackSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsSlackPost`: SlackSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsSlackPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsSlackPost(context.Background()).SlackSettings(slackSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsSlackPost`: SlackSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsSlackPost`: %v\n", resp)
 }
 ```
 
@@ -2568,7 +2568,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsSlack
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slackSettings** | [**SlackSettings**](SlackSettings.md) |  | 
+ **slackSettings** | [**SlackSettings**](SlackSettings.md) |  |
 
 ### Return type
 
@@ -2602,22 +2602,22 @@ Test Slack settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    slackSettings := *openapiclient.NewSlackSettings() // SlackSettings | 
+	slackSettings := *openapiclient.NewSlackSettings() // SlackSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsSlackTestPost(context.Background()).SlackSettings(slackSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsSlackTestPost(context.Background()).SlackSettings(slackSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsSlackTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2632,7 +2632,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsSlack
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slackSettings** | [**SlackSettings**](SlackSettings.md) |  | 
+ **slackSettings** | [**SlackSettings**](SlackSettings.md) |  |
 
 ### Return type
 
@@ -2666,23 +2666,23 @@ Get Telegram notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsTelegramGet`: TelegramSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsTelegramGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsTelegramGet`: TelegramSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsTelegramGet`: %v\n", resp)
 }
 ```
 
@@ -2727,24 +2727,24 @@ Update Telegram notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    telegramSettings := *openapiclient.NewTelegramSettings() // TelegramSettings | 
+	telegramSettings := *openapiclient.NewTelegramSettings() // TelegramSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramPost(context.Background()).TelegramSettings(telegramSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsTelegramPost`: TelegramSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsTelegramPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramPost(context.Background()).TelegramSettings(telegramSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsTelegramPost`: TelegramSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsTelegramPost`: %v\n", resp)
 }
 ```
 
@@ -2759,7 +2759,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsTeleg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **telegramSettings** | [**TelegramSettings**](TelegramSettings.md) |  | 
+ **telegramSettings** | [**TelegramSettings**](TelegramSettings.md) |  |
 
 ### Return type
 
@@ -2793,22 +2793,22 @@ Test Telegram settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    telegramSettings := *openapiclient.NewTelegramSettings() // TelegramSettings | 
+	telegramSettings := *openapiclient.NewTelegramSettings() // TelegramSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramTestPost(context.Background()).TelegramSettings(telegramSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsTelegramTestPost(context.Background()).TelegramSettings(telegramSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsTelegramTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2823,7 +2823,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsTeleg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **telegramSettings** | [**TelegramSettings**](TelegramSettings.md) |  | 
+ **telegramSettings** | [**TelegramSettings**](TelegramSettings.md) |  |
 
 ### Return type
 
@@ -2857,23 +2857,23 @@ Get webhook notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsWebhookGet`: WebhookSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebhookGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsWebhookGet`: WebhookSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebhookGet`: %v\n", resp)
 }
 ```
 
@@ -2918,24 +2918,24 @@ Update webhook notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    webhookSettings := *openapiclient.NewWebhookSettings() // WebhookSettings | 
+	webhookSettings := *openapiclient.NewWebhookSettings() // WebhookSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookPost(context.Background()).WebhookSettings(webhookSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsWebhookPost`: WebhookSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebhookPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookPost(context.Background()).WebhookSettings(webhookSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsWebhookPost`: WebhookSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebhookPost`: %v\n", resp)
 }
 ```
 
@@ -2950,7 +2950,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsWebho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookSettings** | [**WebhookSettings**](WebhookSettings.md) |  | 
+ **webhookSettings** | [**WebhookSettings**](WebhookSettings.md) |  |
 
 ### Return type
 
@@ -2984,22 +2984,22 @@ Test webhook settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    webhookSettings := *openapiclient.NewWebhookSettings() // WebhookSettings | 
+	webhookSettings := *openapiclient.NewWebhookSettings() // WebhookSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookTestPost(context.Background()).WebhookSettings(webhookSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsWebhookTestPost(context.Background()).WebhookSettings(webhookSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebhookTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3014,7 +3014,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsWebho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookSettings** | [**WebhookSettings**](WebhookSettings.md) |  | 
+ **webhookSettings** | [**WebhookSettings**](WebhookSettings.md) |  |
 
 ### Return type
 
@@ -3048,23 +3048,23 @@ Get Web Push notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsWebpushGet`: WebPushSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebpushGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsWebpushGet`: WebPushSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebpushGet`: %v\n", resp)
 }
 ```
 
@@ -3109,24 +3109,24 @@ Update Web Push notification settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    webPushSettings := *openapiclient.NewWebPushSettings() // WebPushSettings | 
+	webPushSettings := *openapiclient.NewWebPushSettings() // WebPushSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushPost(context.Background()).WebPushSettings(webPushSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsNotificationsWebpushPost`: WebPushSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebpushPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushPost(context.Background()).WebPushSettings(webPushSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsNotificationsWebpushPost`: WebPushSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsNotificationsWebpushPost`: %v\n", resp)
 }
 ```
 
@@ -3141,7 +3141,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsWebpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webPushSettings** | [**WebPushSettings**](WebPushSettings.md) |  | 
+ **webPushSettings** | [**WebPushSettings**](WebPushSettings.md) |  |
 
 ### Return type
 
@@ -3175,22 +3175,22 @@ Test Web Push settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    webPushSettings := *openapiclient.NewWebPushSettings() // WebPushSettings | 
+	webPushSettings := *openapiclient.NewWebPushSettings() // WebPushSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushTestPost(context.Background()).WebPushSettings(webPushSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.SettingsAPI.SettingsNotificationsWebpushTestPost(context.Background()).WebPushSettings(webPushSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsNotificationsWebpushTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3205,7 +3205,7 @@ Other parameters are passed through a pointer to a apiSettingsNotificationsWebpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webPushSettings** | [**WebPushSettings**](WebPushSettings.md) |  | 
+ **webPushSettings** | [**WebPushSettings**](WebPushSettings.md) |  |
 
 ### Return type
 
@@ -3239,23 +3239,23 @@ Gets the user's available Plex servers
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexDevicesServersGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexDevicesServersGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexDevicesServersGet`: []PlexDevice
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexDevicesServersGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexDevicesServersGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexDevicesServersGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexDevicesServersGet`: []PlexDevice
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexDevicesServersGet`: %v\n", resp)
 }
 ```
 
@@ -3300,23 +3300,23 @@ Get Plex settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexGet`: PlexSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexGet`: PlexSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexGet`: %v\n", resp)
 }
 ```
 
@@ -3361,25 +3361,25 @@ Get Plex libraries
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sync := "sync_example" // string | Syncs the current libraries with the current Plex server (optional)
-    enable := "enable_example" // string | Comma separated list of libraries to enable. Any libraries not passed will be disabled! (optional)
+	sync := "sync_example" // string | Syncs the current libraries with the current Plex server (optional)
+	enable := "enable_example" // string | Comma separated list of libraries to enable. Any libraries not passed will be disabled! (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexLibraryGet(context.Background()).Sync(sync).Enable(enable).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexLibraryGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexLibraryGet`: []PlexLibrary
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexLibraryGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexLibraryGet(context.Background()).Sync(sync).Enable(enable).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexLibraryGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexLibraryGet`: []PlexLibrary
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexLibraryGet`: %v\n", resp)
 }
 ```
 
@@ -3394,8 +3394,8 @@ Other parameters are passed through a pointer to a apiSettingsPlexLibraryGetRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sync** | **string** | Syncs the current libraries with the current Plex server | 
- **enable** | **string** | Comma separated list of libraries to enable. Any libraries not passed will be disabled! | 
+ **sync** | **string** | Syncs the current libraries with the current Plex server |
+ **enable** | **string** | Comma separated list of libraries to enable. Any libraries not passed will be disabled! |
 
 ### Return type
 
@@ -3429,24 +3429,24 @@ Update Plex settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    plexSettings := *openapiclient.NewPlexSettings("Main Server", "1234123412341234", "127.0.0.1", float32(32400)) // PlexSettings | 
+	plexSettings := *openapiclient.NewPlexSettings("Main Server", "1234123412341234", "127.0.0.1", float32(32400)) // PlexSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexPost(context.Background()).PlexSettings(plexSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexPost`: PlexSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexPost(context.Background()).PlexSettings(plexSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexPost`: PlexSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexPost`: %v\n", resp)
 }
 ```
 
@@ -3461,7 +3461,7 @@ Other parameters are passed through a pointer to a apiSettingsPlexPostRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **plexSettings** | [**PlexSettings**](PlexSettings.md) |  | 
+ **plexSettings** | [**PlexSettings**](PlexSettings.md) |  |
 
 ### Return type
 
@@ -3495,23 +3495,23 @@ Get status of full Plex library scan
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexSyncGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexSyncGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexSyncGet`: SettingsPlexSyncGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexSyncGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexSyncGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexSyncGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexSyncGet`: SettingsPlexSyncGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexSyncGet`: %v\n", resp)
 }
 ```
 
@@ -3556,24 +3556,24 @@ Start full Plex library scan
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    settingsPlexSyncPostRequest := *openapiclient.NewSettingsPlexSyncPostRequest() // SettingsPlexSyncPostRequest |  (optional)
+	settingsPlexSyncPostRequest := *openapiclient.NewSettingsPlexSyncPostRequest() // SettingsPlexSyncPostRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexSyncPost(context.Background()).SettingsPlexSyncPostRequest(settingsPlexSyncPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexSyncPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexSyncPost`: SettingsPlexSyncGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexSyncPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexSyncPost(context.Background()).SettingsPlexSyncPostRequest(settingsPlexSyncPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexSyncPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexSyncPost`: SettingsPlexSyncGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexSyncPost`: %v\n", resp)
 }
 ```
 
@@ -3588,7 +3588,7 @@ Other parameters are passed through a pointer to a apiSettingsPlexSyncPostReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settingsPlexSyncPostRequest** | [**SettingsPlexSyncPostRequest**](SettingsPlexSyncPostRequest.md) |  | 
+ **settingsPlexSyncPostRequest** | [**SettingsPlexSyncPostRequest**](SettingsPlexSyncPostRequest.md) |  |
 
 ### Return type
 
@@ -3622,23 +3622,23 @@ Get Plex users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPlexUsersGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexUsersGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPlexUsersGet`: []SettingsPlexUsersGet200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexUsersGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPlexUsersGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPlexUsersGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPlexUsersGet`: []SettingsPlexUsersGet200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPlexUsersGet`: %v\n", resp)
 }
 ```
 
@@ -3683,23 +3683,23 @@ Get public settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsPublicGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPublicGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsPublicGet`: PublicSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPublicGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsPublicGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsPublicGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsPublicGet`: PublicSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsPublicGet`: %v\n", resp)
 }
 ```
 
@@ -3744,23 +3744,23 @@ Get Radarr settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrGet`: []RadarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrGet`: []RadarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrGet`: %v\n", resp)
 }
 ```
 
@@ -3805,24 +3805,24 @@ Create Radarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    radarrSettings := *openapiclient.NewRadarrSettings("Radarr Main", "127.0.0.1", float32(7878), "exampleapikey", false, float32(1), "720p/1080p", "/movies", false, "In Cinema", false) // RadarrSettings | 
+	radarrSettings := *openapiclient.NewRadarrSettings("Radarr Main", "127.0.0.1", float32(7878), "exampleapikey", false, float32(1), "720p/1080p", "/movies", false, "In Cinema", false) // RadarrSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrPost(context.Background()).RadarrSettings(radarrSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrPost`: RadarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrPost(context.Background()).RadarrSettings(radarrSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrPost`: RadarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrPost`: %v\n", resp)
 }
 ```
 
@@ -3837,7 +3837,7 @@ Other parameters are passed through a pointer to a apiSettingsRadarrPostRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **radarrSettings** | [**RadarrSettings**](RadarrSettings.md) |  | 
+ **radarrSettings** | [**RadarrSettings**](RadarrSettings.md) |  |
 
 ### Return type
 
@@ -3871,24 +3871,24 @@ Delete Radarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    radarrId := int32(56) // int32 | Radarr instance ID
+	radarrId := int32(56) // int32 | Radarr instance ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdDelete(context.Background(), radarrId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrRadarrIdDelete`: RadarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdDelete`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdDelete(context.Background(), radarrId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrRadarrIdDelete`: RadarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdDelete`: %v\n", resp)
 }
 ```
 
@@ -3898,7 +3898,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**radarrId** | **int32** | Radarr instance ID | 
+**radarrId** | **int32** | Radarr instance ID |
 
 ### Other Parameters
 
@@ -3941,24 +3941,24 @@ Get available Radarr profiles
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    radarrId := int32(56) // int32 | Radarr instance ID
+	radarrId := int32(56) // int32 | Radarr instance ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdProfilesGet(context.Background(), radarrId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdProfilesGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrRadarrIdProfilesGet`: []ServiceProfile
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdProfilesGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdProfilesGet(context.Background(), radarrId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdProfilesGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrRadarrIdProfilesGet`: []ServiceProfile
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdProfilesGet`: %v\n", resp)
 }
 ```
 
@@ -3968,7 +3968,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**radarrId** | **int32** | Radarr instance ID | 
+**radarrId** | **int32** | Radarr instance ID |
 
 ### Other Parameters
 
@@ -4011,25 +4011,25 @@ Update Radarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    radarrId := int32(56) // int32 | Radarr instance ID
-    radarrSettings := *openapiclient.NewRadarrSettings("Radarr Main", "127.0.0.1", float32(7878), "exampleapikey", false, float32(1), "720p/1080p", "/movies", false, "In Cinema", false) // RadarrSettings | 
+	radarrId := int32(56) // int32 | Radarr instance ID
+	radarrSettings := *openapiclient.NewRadarrSettings("Radarr Main", "127.0.0.1", float32(7878), "exampleapikey", false, float32(1), "720p/1080p", "/movies", false, "In Cinema", false) // RadarrSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdPut(context.Background(), radarrId).RadarrSettings(radarrSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrRadarrIdPut`: RadarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrRadarrIdPut(context.Background(), radarrId).RadarrSettings(radarrSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrRadarrIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrRadarrIdPut`: RadarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrRadarrIdPut`: %v\n", resp)
 }
 ```
 
@@ -4039,7 +4039,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**radarrId** | **int32** | Radarr instance ID | 
+**radarrId** | **int32** | Radarr instance ID |
 
 ### Other Parameters
 
@@ -4049,7 +4049,7 @@ Other parameters are passed through a pointer to a apiSettingsRadarrRadarrIdPutR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **radarrSettings** | [**RadarrSettings**](RadarrSettings.md) |  | 
+ **radarrSettings** | [**RadarrSettings**](RadarrSettings.md) |  |
 
 ### Return type
 
@@ -4083,24 +4083,24 @@ Test Radarr configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    settingsRadarrTestPostRequest := *openapiclient.NewSettingsRadarrTestPostRequest("127.0.0.1", float32(7878), "yourapikey", false) // SettingsRadarrTestPostRequest | 
+	settingsRadarrTestPostRequest := *openapiclient.NewSettingsRadarrTestPostRequest("127.0.0.1", float32(7878), "yourapikey", false) // SettingsRadarrTestPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsRadarrTestPost(context.Background()).SettingsRadarrTestPostRequest(settingsRadarrTestPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsRadarrTestPost`: SettingsRadarrTestPost200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrTestPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsRadarrTestPost(context.Background()).SettingsRadarrTestPostRequest(settingsRadarrTestPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsRadarrTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsRadarrTestPost`: SettingsRadarrTestPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsRadarrTestPost`: %v\n", resp)
 }
 ```
 
@@ -4115,7 +4115,7 @@ Other parameters are passed through a pointer to a apiSettingsRadarrTestPostRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settingsRadarrTestPostRequest** | [**SettingsRadarrTestPostRequest**](SettingsRadarrTestPostRequest.md) |  | 
+ **settingsRadarrTestPostRequest** | [**SettingsRadarrTestPostRequest**](SettingsRadarrTestPostRequest.md) |  |
 
 ### Return type
 
@@ -4149,23 +4149,23 @@ Get Sonarr settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsSonarrGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsSonarrGet`: []SonarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsSonarrGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsSonarrGet`: []SonarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrGet`: %v\n", resp)
 }
 ```
 
@@ -4210,24 +4210,24 @@ Create Sonarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sonarrSettings := *openapiclient.NewSonarrSettings("Sonarr Main", "127.0.0.1", float32(8989), "exampleapikey", false, float32(1), "720p/1080p", "/tv/", false, false, false) // SonarrSettings | 
+	sonarrSettings := *openapiclient.NewSonarrSettings("Sonarr Main", "127.0.0.1", float32(8989), "exampleapikey", false, float32(1), "720p/1080p", "/tv/", false, false, false) // SonarrSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsSonarrPost(context.Background()).SonarrSettings(sonarrSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsSonarrPost`: SonarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsSonarrPost(context.Background()).SonarrSettings(sonarrSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsSonarrPost`: SonarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrPost`: %v\n", resp)
 }
 ```
 
@@ -4242,7 +4242,7 @@ Other parameters are passed through a pointer to a apiSettingsSonarrPostRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sonarrSettings** | [**SonarrSettings**](SonarrSettings.md) |  | 
+ **sonarrSettings** | [**SonarrSettings**](SonarrSettings.md) |  |
 
 ### Return type
 
@@ -4276,24 +4276,24 @@ Delete Sonarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sonarrId := int32(56) // int32 | Sonarr instance ID
+	sonarrId := int32(56) // int32 | Sonarr instance ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsSonarrSonarrIdDelete(context.Background(), sonarrId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrSonarrIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsSonarrSonarrIdDelete`: SonarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrSonarrIdDelete`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsSonarrSonarrIdDelete(context.Background(), sonarrId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrSonarrIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsSonarrSonarrIdDelete`: SonarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrSonarrIdDelete`: %v\n", resp)
 }
 ```
 
@@ -4303,7 +4303,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**sonarrId** | **int32** | Sonarr instance ID | 
+**sonarrId** | **int32** | Sonarr instance ID |
 
 ### Other Parameters
 
@@ -4346,25 +4346,25 @@ Update Sonarr instance
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sonarrId := int32(56) // int32 | Sonarr instance ID
-    sonarrSettings := *openapiclient.NewSonarrSettings("Sonarr Main", "127.0.0.1", float32(8989), "exampleapikey", false, float32(1), "720p/1080p", "/tv/", false, false, false) // SonarrSettings | 
+	sonarrId := int32(56) // int32 | Sonarr instance ID
+	sonarrSettings := *openapiclient.NewSonarrSettings("Sonarr Main", "127.0.0.1", float32(8989), "exampleapikey", false, float32(1), "720p/1080p", "/tv/", false, false, false) // SonarrSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsSonarrSonarrIdPut(context.Background(), sonarrId).SonarrSettings(sonarrSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrSonarrIdPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsSonarrSonarrIdPut`: SonarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrSonarrIdPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsSonarrSonarrIdPut(context.Background(), sonarrId).SonarrSettings(sonarrSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrSonarrIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsSonarrSonarrIdPut`: SonarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrSonarrIdPut`: %v\n", resp)
 }
 ```
 
@@ -4374,7 +4374,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**sonarrId** | **int32** | Sonarr instance ID | 
+**sonarrId** | **int32** | Sonarr instance ID |
 
 ### Other Parameters
 
@@ -4384,7 +4384,7 @@ Other parameters are passed through a pointer to a apiSettingsSonarrSonarrIdPutR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **sonarrSettings** | [**SonarrSettings**](SonarrSettings.md) |  | 
+ **sonarrSettings** | [**SonarrSettings**](SonarrSettings.md) |  |
 
 ### Return type
 
@@ -4418,24 +4418,24 @@ Test Sonarr configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    settingsSonarrTestPostRequest := *openapiclient.NewSettingsSonarrTestPostRequest("127.0.0.1", float32(8989), "yourapikey", false) // SettingsSonarrTestPostRequest | 
+	settingsSonarrTestPostRequest := *openapiclient.NewSettingsSonarrTestPostRequest("127.0.0.1", float32(8989), "yourapikey", false) // SettingsSonarrTestPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsSonarrTestPost(context.Background()).SettingsSonarrTestPostRequest(settingsSonarrTestPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrTestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsSonarrTestPost`: SettingsRadarrTestPost200Response
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrTestPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsSonarrTestPost(context.Background()).SettingsSonarrTestPostRequest(settingsSonarrTestPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsSonarrTestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsSonarrTestPost`: SettingsRadarrTestPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsSonarrTestPost`: %v\n", resp)
 }
 ```
 
@@ -4450,7 +4450,7 @@ Other parameters are passed through a pointer to a apiSettingsSonarrTestPostRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settingsSonarrTestPostRequest** | [**SettingsSonarrTestPostRequest**](SettingsSonarrTestPostRequest.md) |  | 
+ **settingsSonarrTestPostRequest** | [**SettingsSonarrTestPostRequest**](SettingsSonarrTestPostRequest.md) |  |
 
 ### Return type
 
@@ -4484,23 +4484,23 @@ Get Tautulli settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsTautulliGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsTautulliGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsTautulliGet`: TautulliSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsTautulliGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsTautulliGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsTautulliGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsTautulliGet`: TautulliSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsTautulliGet`: %v\n", resp)
 }
 ```
 
@@ -4545,24 +4545,24 @@ Update Tautulli settings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tautulliSettings := *openapiclient.NewTautulliSettings() // TautulliSettings | 
+	tautulliSettings := *openapiclient.NewTautulliSettings() // TautulliSettings |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SettingsAPI.SettingsTautulliPost(context.Background()).TautulliSettings(tautulliSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsTautulliPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SettingsTautulliPost`: TautulliSettings
-    fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsTautulliPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.SettingsTautulliPost(context.Background()).TautulliSettings(tautulliSettings).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.SettingsTautulliPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SettingsTautulliPost`: TautulliSettings
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.SettingsTautulliPost`: %v\n", resp)
 }
 ```
 
@@ -4577,7 +4577,7 @@ Other parameters are passed through a pointer to a apiSettingsTautulliPostReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tautulliSettings** | [**TautulliSettings**](TautulliSettings.md) |  | 
+ **tautulliSettings** | [**TautulliSettings**](TautulliSettings.md) |  |
 
 ### Return type
 
@@ -4595,4 +4595,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

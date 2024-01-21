@@ -29,23 +29,23 @@ Gets request counts
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestCountGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestCountGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestCountGet`: RequestCountGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestCountGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestCountGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestCountGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestCountGet`: RequestCountGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestCountGet`: %v\n", resp)
 }
 ```
 
@@ -90,28 +90,28 @@ Get all requests
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    take := float32(20) // float32 |  (optional)
-    skip := float32(0) // float32 |  (optional)
-    filter := "filter_example" // string |  (optional)
-    sort := "sort_example" // string |  (optional) (default to "added")
-    requestedBy := float32(1) // float32 |  (optional)
+	take := float32(20) // float32 |  (optional)
+	skip := float32(0) // float32 |  (optional)
+	filter := "filter_example" // string |  (optional)
+	sort := "sort_example" // string |  (optional) (default to "added")
+	requestedBy := float32(1) // float32 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestGet(context.Background()).Take(take).Skip(skip).Filter(filter).Sort(sort).RequestedBy(requestedBy).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestGet`: UserUserIdRequestsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestGet(context.Background()).Take(take).Skip(skip).Filter(filter).Sort(sort).RequestedBy(requestedBy).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestGet`: UserUserIdRequestsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestGet`: %v\n", resp)
 }
 ```
 
@@ -126,11 +126,11 @@ Other parameters are passed through a pointer to a apiRequestGetRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **take** | **float32** |  | 
- **skip** | **float32** |  | 
- **filter** | **string** |  | 
+ **take** | **float32** |  |
+ **skip** | **float32** |  |
+ **filter** | **string** |  |
  **sort** | **string** |  | [default to &quot;added&quot;]
- **requestedBy** | **float32** |  | 
+ **requestedBy** | **float32** |  |
 
 ### Return type
 
@@ -164,24 +164,24 @@ Create new request
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestPostRequest := *openapiclient.NewRequestPostRequest("movie", float32(123)) // RequestPostRequest | 
+	requestPostRequest := *openapiclient.NewRequestPostRequest("movie", float32(123)) // RequestPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestPost(context.Background()).RequestPostRequest(requestPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestPost`: MediaRequest
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestPost(context.Background()).RequestPostRequest(requestPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestPost`: MediaRequest
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestPost`: %v\n", resp)
 }
 ```
 
@@ -196,7 +196,7 @@ Other parameters are passed through a pointer to a apiRequestPostRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestPostRequest** | [**RequestPostRequest**](RequestPostRequest.md) |  | 
+ **requestPostRequest** | [**RequestPostRequest**](RequestPostRequest.md) |  |
 
 ### Return type
 
@@ -230,22 +230,22 @@ Delete request
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestId := "1" // string | Request ID
+	requestId := "1" // string | Request ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RequestAPI.RequestRequestIdDelete(context.Background(), requestId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.RequestAPI.RequestRequestIdDelete(context.Background(), requestId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -255,7 +255,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestId** | **string** | Request ID | 
+**requestId** | **string** | Request ID |
 
 ### Other Parameters
 
@@ -298,24 +298,24 @@ Get MediaRequest
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestId := "1" // string | Request ID
+	requestId := "1" // string | Request ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestRequestIdGet(context.Background(), requestId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestRequestIdGet`: MediaRequest
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestRequestIdGet(context.Background(), requestId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestRequestIdGet`: MediaRequest
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdGet`: %v\n", resp)
 }
 ```
 
@@ -325,7 +325,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestId** | **string** | Request ID | 
+**requestId** | **string** | Request ID |
 
 ### Other Parameters
 
@@ -368,25 +368,25 @@ Update MediaRequest
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestId := "1" // string | Request ID
-    requestRequestIdPutRequest := *openapiclient.NewRequestRequestIdPutRequest("MediaType_example") // RequestRequestIdPutRequest | 
+	requestId := "1" // string | Request ID
+	requestRequestIdPutRequest := *openapiclient.NewRequestRequestIdPutRequest("MediaType_example") // RequestRequestIdPutRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestRequestIdPut(context.Background(), requestId).RequestRequestIdPutRequest(requestRequestIdPutRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestRequestIdPut`: MediaRequest
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdPut`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestRequestIdPut(context.Background(), requestId).RequestRequestIdPutRequest(requestRequestIdPutRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestRequestIdPut`: MediaRequest
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdPut`: %v\n", resp)
 }
 ```
 
@@ -396,7 +396,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestId** | **string** | Request ID | 
+**requestId** | **string** | Request ID |
 
 ### Other Parameters
 
@@ -406,7 +406,7 @@ Other parameters are passed through a pointer to a apiRequestRequestIdPutRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **requestRequestIdPutRequest** | [**RequestRequestIdPutRequest**](RequestRequestIdPutRequest.md) |  | 
+ **requestRequestIdPutRequest** | [**RequestRequestIdPutRequest**](RequestRequestIdPutRequest.md) |  |
 
 ### Return type
 
@@ -440,24 +440,24 @@ Retry failed request
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestId := "1" // string | Request ID
+	requestId := "1" // string | Request ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestRequestIdRetryPost(context.Background(), requestId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdRetryPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestRequestIdRetryPost`: MediaRequest
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdRetryPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestRequestIdRetryPost(context.Background(), requestId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdRetryPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestRequestIdRetryPost`: MediaRequest
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdRetryPost`: %v\n", resp)
 }
 ```
 
@@ -467,7 +467,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestId** | **string** | Request ID | 
+**requestId** | **string** | Request ID |
 
 ### Other Parameters
 
@@ -510,25 +510,25 @@ Update a request's status
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    requestId := "1" // string | Request ID
-    status := "status_example" // string | New status
+	requestId := "1" // string | Request ID
+	status := "status_example" // string | New status
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestAPI.RequestRequestIdStatusPost(context.Background(), requestId, status).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdStatusPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RequestRequestIdStatusPost`: MediaRequest
-    fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdStatusPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RequestAPI.RequestRequestIdStatusPost(context.Background(), requestId, status).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RequestAPI.RequestRequestIdStatusPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RequestRequestIdStatusPost`: MediaRequest
+	fmt.Fprintf(os.Stdout, "Response from `RequestAPI.RequestRequestIdStatusPost`: %v\n", resp)
 }
 ```
 
@@ -538,8 +538,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestId** | **string** | Request ID | 
-**status** | **string** | New status | 
+**requestId** | **string** | Request ID |
+**status** | **string** | New status |
 
 ### Other Parameters
 
@@ -567,4 +567,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

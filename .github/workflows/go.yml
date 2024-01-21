@@ -2,6 +2,9 @@ name: Go
 
 on: [push]
 
+env:
+  GO_DIR: ./overseerr
+
 jobs:
   build:
 
@@ -16,15 +19,20 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: ${{ matrix.go-version }}
+          working-directory: ${{ env.GO_DIR }}
       # You can test your matrix by printing the current Go version
       - name: Display Go version
         run: go version
+        working-directory: ${{ env.GO_DIR }}
       - name: Install dependencies
-        run: go get ./overseerr
+        run: go get
+        working-directory: ${{ env.GO_DIR }}
       - name: Test with Go
-        run: go test ./overseerr -json > TestResults-${{ matrix.go-version }}.json
+        run: go test -json > TestResults-${{ matrix.go-version }}.json
+        working-directory: ${{ env.GO_DIR }}
       - name: Upload Go test results
         uses: actions/upload-artifact@v3
         with:
           name: Go-results-${{ matrix.go-version }}
           path: TestResults-${{ matrix.go-version }}.json
+          working-directory: ${{ env.GO_DIR }}

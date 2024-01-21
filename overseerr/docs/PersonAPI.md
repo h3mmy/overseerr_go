@@ -23,25 +23,25 @@ Get combined credits
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    personId := float32(287) // float32 | 
-    language := "en" // string |  (optional)
+	personId := float32(287) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PersonAPI.PersonPersonIdCombinedCreditsGet(context.Background(), personId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PersonAPI.PersonPersonIdCombinedCreditsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PersonPersonIdCombinedCreditsGet`: PersonPersonIdCombinedCreditsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `PersonAPI.PersonPersonIdCombinedCreditsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PersonAPI.PersonPersonIdCombinedCreditsGet(context.Background(), personId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PersonAPI.PersonPersonIdCombinedCreditsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PersonPersonIdCombinedCreditsGet`: PersonPersonIdCombinedCreditsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `PersonAPI.PersonPersonIdCombinedCreditsGet`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**personId** | **float32** |  | 
+**personId** | **float32** |  |
 
 ### Other Parameters
 
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiPersonPersonIdCombinedCred
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -95,25 +95,25 @@ Get person details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    personId := float32(287) // float32 | 
-    language := "en" // string |  (optional)
+	personId := float32(287) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PersonAPI.PersonPersonIdGet(context.Background(), personId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PersonAPI.PersonPersonIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PersonPersonIdGet`: PersonDetails
-    fmt.Fprintf(os.Stdout, "Response from `PersonAPI.PersonPersonIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PersonAPI.PersonPersonIdGet(context.Background(), personId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PersonAPI.PersonPersonIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PersonPersonIdGet`: PersonDetails
+	fmt.Fprintf(os.Stdout, "Response from `PersonAPI.PersonPersonIdGet`: %v\n", resp)
 }
 ```
 
@@ -123,7 +123,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**personId** | **float32** |  | 
+**personId** | **float32** |  |
 
 ### Other Parameters
 
@@ -133,7 +133,7 @@ Other parameters are passed through a pointer to a apiPersonPersonIdGetRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -151,4 +151,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

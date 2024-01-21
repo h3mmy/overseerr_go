@@ -25,24 +25,24 @@ Sign in using a local account
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    authLocalPostRequest := *openapiclient.NewAuthLocalPostRequest("Email_example", "Password_example") // AuthLocalPostRequest | 
+	authLocalPostRequest := *openapiclient.NewAuthLocalPostRequest("Email_example", "Password_example") // AuthLocalPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthAPI.AuthLocalPost(context.Background()).AuthLocalPostRequest(authLocalPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthLocalPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthLocalPost`: User
-    fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthLocalPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.AuthLocalPost(context.Background()).AuthLocalPostRequest(authLocalPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthLocalPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthLocalPost`: User
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthLocalPost`: %v\n", resp)
 }
 ```
 
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiAuthLocalPostRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authLocalPostRequest** | [**AuthLocalPostRequest**](AuthLocalPostRequest.md) |  | 
+ **authLocalPostRequest** | [**AuthLocalPostRequest**](AuthLocalPostRequest.md) |  |
 
 ### Return type
 
@@ -91,23 +91,23 @@ Sign out and clear session cookie
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthAPI.AuthLogoutPost(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthLogoutPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthLogoutPost`: AuthLogoutPost200Response
-    fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthLogoutPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.AuthLogoutPost(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthLogoutPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthLogoutPost`: AuthLogoutPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthLogoutPost`: %v\n", resp)
 }
 ```
 
@@ -152,23 +152,23 @@ Get logged-in user
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthAPI.AuthMeGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthMeGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthMeGet`: User
-    fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthMeGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.AuthMeGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthMeGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthMeGet`: User
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthMeGet`: %v\n", resp)
 }
 ```
 
@@ -213,24 +213,24 @@ Sign in using a Plex token
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    authPlexPostRequest := *openapiclient.NewAuthPlexPostRequest("AuthToken_example") // AuthPlexPostRequest | 
+	authPlexPostRequest := *openapiclient.NewAuthPlexPostRequest("AuthToken_example") // AuthPlexPostRequest |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthAPI.AuthPlexPost(context.Background()).AuthPlexPostRequest(authPlexPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthPlexPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AuthPlexPost`: User
-    fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthPlexPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.AuthPlexPost(context.Background()).AuthPlexPostRequest(authPlexPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthPlexPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthPlexPost`: User
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthPlexPost`: %v\n", resp)
 }
 ```
 
@@ -245,7 +245,7 @@ Other parameters are passed through a pointer to a apiAuthPlexPostRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authPlexPostRequest** | [**AuthPlexPostRequest**](AuthPlexPostRequest.md) |  | 
+ **authPlexPostRequest** | [**AuthPlexPostRequest**](AuthPlexPostRequest.md) |  |
 
 ### Return type
 
@@ -263,4 +263,3 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

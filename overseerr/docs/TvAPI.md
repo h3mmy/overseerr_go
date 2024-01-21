@@ -26,25 +26,25 @@ Get TV details
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tvId := float32(76479) // float32 | 
-    language := "en" // string |  (optional)
+	tvId := float32(76479) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TvAPI.TvTvIdGet(context.Background(), tvId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TvTvIdGet`: TvDetails
-    fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TvAPI.TvTvIdGet(context.Background(), tvId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TvTvIdGet`: TvDetails
+	fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdGet`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tvId** | **float32** |  | 
+**tvId** | **float32** |  |
 
 ### Other Parameters
 
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiTvTvIdGetRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -98,24 +98,24 @@ Get TV ratings
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tvId := float32(76479) // float32 | 
+	tvId := float32(76479) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TvAPI.TvTvIdRatingsGet(context.Background(), tvId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdRatingsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TvTvIdRatingsGet`: TvTvIdRatingsGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdRatingsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TvAPI.TvTvIdRatingsGet(context.Background(), tvId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdRatingsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TvTvIdRatingsGet`: TvTvIdRatingsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdRatingsGet`: %v\n", resp)
 }
 ```
 
@@ -125,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tvId** | **float32** |  | 
+**tvId** | **float32** |  |
 
 ### Other Parameters
 
@@ -168,26 +168,26 @@ Get recommended TV series
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tvId := float32(76479) // float32 | 
-    page := float32(1) // float32 |  (optional) (default to 1)
-    language := "en" // string |  (optional)
+	tvId := float32(76479) // float32 |
+	page := float32(1) // float32 |  (optional) (default to 1)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TvAPI.TvTvIdRecommendationsGet(context.Background(), tvId).Page(page).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdRecommendationsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TvTvIdRecommendationsGet`: DiscoverTvGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdRecommendationsGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TvAPI.TvTvIdRecommendationsGet(context.Background(), tvId).Page(page).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdRecommendationsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TvTvIdRecommendationsGet`: DiscoverTvGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdRecommendationsGet`: %v\n", resp)
 }
 ```
 
@@ -197,7 +197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tvId** | **float32** |  | 
+**tvId** | **float32** |  |
 
 ### Other Parameters
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **page** | **float32** |  | [default to 1]
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -242,26 +242,26 @@ Get season details and episode list
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tvId := float32(76479) // float32 | 
-    seasonId := float32(1) // float32 | 
-    language := "en" // string |  (optional)
+	tvId := float32(76479) // float32 |
+	seasonId := float32(1) // float32 |
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TvAPI.TvTvIdSeasonSeasonIdGet(context.Background(), tvId, seasonId).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdSeasonSeasonIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TvTvIdSeasonSeasonIdGet`: Season
-    fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdSeasonSeasonIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TvAPI.TvTvIdSeasonSeasonIdGet(context.Background(), tvId, seasonId).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdSeasonSeasonIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TvTvIdSeasonSeasonIdGet`: Season
+	fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdSeasonSeasonIdGet`: %v\n", resp)
 }
 ```
 
@@ -271,8 +271,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tvId** | **float32** |  | 
-**seasonId** | **float32** |  | 
+**tvId** | **float32** |  |
+**seasonId** | **float32** |  |
 
 ### Other Parameters
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -317,26 +317,26 @@ Get similar TV series
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tvId := float32(76479) // float32 | 
-    page := float32(1) // float32 |  (optional) (default to 1)
-    language := "en" // string |  (optional)
+	tvId := float32(76479) // float32 |
+	page := float32(1) // float32 |  (optional) (default to 1)
+	language := "en" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TvAPI.TvTvIdSimilarGet(context.Background(), tvId).Page(page).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdSimilarGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TvTvIdSimilarGet`: DiscoverTvGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdSimilarGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TvAPI.TvTvIdSimilarGet(context.Background(), tvId).Page(page).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TvAPI.TvTvIdSimilarGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TvTvIdSimilarGet`: DiscoverTvGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `TvAPI.TvTvIdSimilarGet`: %v\n", resp)
 }
 ```
 
@@ -346,7 +346,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tvId** | **float32** |  | 
+**tvId** | **float32** |  |
 
 ### Other Parameters
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **page** | **float32** |  | [default to 1]
- **language** | **string** |  | 
+ **language** | **string** |  |
 
 ### Return type
 
@@ -375,4 +375,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

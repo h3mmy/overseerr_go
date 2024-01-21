@@ -26,23 +26,23 @@ Get non-sensitive Radarr server list
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAPI.ServiceRadarrGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceRadarrGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ServiceRadarrGet`: []RadarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceRadarrGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ServiceRadarrGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceRadarrGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ServiceRadarrGet`: []RadarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceRadarrGet`: %v\n", resp)
 }
 ```
 
@@ -87,24 +87,24 @@ Get Radarr server quality profiles and root folders
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    radarrId := float32(0) // float32 | 
+	radarrId := float32(0) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAPI.ServiceRadarrRadarrIdGet(context.Background(), radarrId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceRadarrRadarrIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ServiceRadarrRadarrIdGet`: ServiceRadarrRadarrIdGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceRadarrRadarrIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ServiceRadarrRadarrIdGet(context.Background(), radarrId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceRadarrRadarrIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ServiceRadarrRadarrIdGet`: ServiceRadarrRadarrIdGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceRadarrRadarrIdGet`: %v\n", resp)
 }
 ```
 
@@ -114,7 +114,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**radarrId** | **float32** |  | 
+**radarrId** | **float32** |  |
 
 ### Other Parameters
 
@@ -157,23 +157,23 @@ Get non-sensitive Sonarr server list
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAPI.ServiceSonarrGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ServiceSonarrGet`: []SonarrSettings
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ServiceSonarrGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ServiceSonarrGet`: []SonarrSettings
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrGet`: %v\n", resp)
 }
 ```
 
@@ -218,24 +218,24 @@ Get series from Sonarr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    tmdbId := float32(0) // float32 | 
+	tmdbId := float32(0) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAPI.ServiceSonarrLookupTmdbIdGet(context.Background(), tmdbId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrLookupTmdbIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ServiceSonarrLookupTmdbIdGet`: []SonarrSeries
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrLookupTmdbIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ServiceSonarrLookupTmdbIdGet(context.Background(), tmdbId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrLookupTmdbIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ServiceSonarrLookupTmdbIdGet`: []SonarrSeries
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrLookupTmdbIdGet`: %v\n", resp)
 }
 ```
 
@@ -245,7 +245,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tmdbId** | **float32** |  | 
+**tmdbId** | **float32** |  |
 
 ### Other Parameters
 
@@ -288,24 +288,24 @@ Get Sonarr server quality profiles and root folders
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    sonarrId := float32(0) // float32 | 
+	sonarrId := float32(0) // float32 |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAPI.ServiceSonarrSonarrIdGet(context.Background(), sonarrId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrSonarrIdGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ServiceSonarrSonarrIdGet`: ServiceSonarrSonarrIdGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrSonarrIdGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ServiceSonarrSonarrIdGet(context.Background(), sonarrId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ServiceSonarrSonarrIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ServiceSonarrSonarrIdGet`: ServiceSonarrSonarrIdGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ServiceSonarrSonarrIdGet`: %v\n", resp)
 }
 ```
 
@@ -315,7 +315,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**sonarrId** | **float32** |  | 
+**sonarrId** | **float32** |  |
 
 ### Other Parameters
 
@@ -342,4 +342,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

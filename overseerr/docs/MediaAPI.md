@@ -25,27 +25,27 @@ Get media
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    take := float32(20) // float32 |  (optional)
-    skip := float32(0) // float32 |  (optional)
-    filter := "filter_example" // string |  (optional)
-    sort := "sort_example" // string |  (optional) (default to "added")
+	take := float32(20) // float32 |  (optional)
+	skip := float32(0) // float32 |  (optional)
+	filter := "filter_example" // string |  (optional)
+	sort := "sort_example" // string |  (optional) (default to "added")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaAPI.MediaGet(context.Background()).Take(take).Skip(skip).Filter(filter).Sort(sort).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MediaGet`: MediaGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.MediaGet(context.Background()).Take(take).Skip(skip).Filter(filter).Sort(sort).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MediaGet`: MediaGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaGet`: %v\n", resp)
 }
 ```
 
@@ -60,9 +60,9 @@ Other parameters are passed through a pointer to a apiMediaGetRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **take** | **float32** |  | 
- **skip** | **float32** |  | 
- **filter** | **string** |  | 
+ **take** | **float32** |  |
+ **skip** | **float32** |  |
+ **filter** | **string** |  |
  **sort** | **string** |  | [default to &quot;added&quot;]
 
 ### Return type
@@ -97,22 +97,22 @@ Delete media item
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    mediaId := "1" // string | Media ID
+	mediaId := "1" // string | Media ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MediaAPI.MediaMediaIdDelete(context.Background(), mediaId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MediaAPI.MediaMediaIdDelete(context.Background(), mediaId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mediaId** | **string** | Media ID | 
+**mediaId** | **string** | Media ID |
 
 ### Other Parameters
 
@@ -165,26 +165,26 @@ Update media status
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    mediaId := "1" // string | Media ID
-    status := "available" // string | New status
-    mediaMediaIdStatusPostRequest := *openapiclient.NewMediaMediaIdStatusPostRequest() // MediaMediaIdStatusPostRequest |  (optional)
+	mediaId := "1" // string | Media ID
+	status := "available" // string | New status
+	mediaMediaIdStatusPostRequest := *openapiclient.NewMediaMediaIdStatusPostRequest() // MediaMediaIdStatusPostRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaAPI.MediaMediaIdStatusPost(context.Background(), mediaId, status).MediaMediaIdStatusPostRequest(mediaMediaIdStatusPostRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdStatusPost``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MediaMediaIdStatusPost`: MediaInfo
-    fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaMediaIdStatusPost`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.MediaMediaIdStatusPost(context.Background(), mediaId, status).MediaMediaIdStatusPostRequest(mediaMediaIdStatusPostRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdStatusPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MediaMediaIdStatusPost`: MediaInfo
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaMediaIdStatusPost`: %v\n", resp)
 }
 ```
 
@@ -194,8 +194,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mediaId** | **string** | Media ID | 
-**status** | **string** | New status | 
+**mediaId** | **string** | Media ID |
+**status** | **string** | New status |
 
 ### Other Parameters
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **mediaMediaIdStatusPostRequest** | [**MediaMediaIdStatusPostRequest**](MediaMediaIdStatusPostRequest.md) |  | 
+ **mediaMediaIdStatusPostRequest** | [**MediaMediaIdStatusPostRequest**](MediaMediaIdStatusPostRequest.md) |  |
 
 ### Return type
 
@@ -240,24 +240,24 @@ Get watch data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/h3mmy/overseerr_go"
 )
 
 func main() {
-    mediaId := "1" // string | Media ID
+	mediaId := "1" // string | Media ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaAPI.MediaMediaIdWatchDataGet(context.Background(), mediaId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdWatchDataGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MediaMediaIdWatchDataGet`: MediaMediaIdWatchDataGet200Response
-    fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaMediaIdWatchDataGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.MediaMediaIdWatchDataGet(context.Background(), mediaId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.MediaMediaIdWatchDataGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MediaMediaIdWatchDataGet`: MediaMediaIdWatchDataGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.MediaMediaIdWatchDataGet`: %v\n", resp)
 }
 ```
 
@@ -267,7 +267,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mediaId** | **string** | Media ID | 
+**mediaId** | **string** | Media ID |
 
 ### Other Parameters
 
@@ -294,4 +294,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
