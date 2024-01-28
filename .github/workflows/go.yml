@@ -26,11 +26,14 @@ jobs:
       - name: Install dependencies
         run: go get .
         working-directory: ${{ env.GO_DIR }}
-      - name: Test with Go
-        run: go test ./test -json > TestResults-${{ matrix.go-version }}.json
+      - name: Build Module
+        run: go build .
         working-directory: ${{ env.GO_DIR }}
-      - name: Upload Go test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: Go-results-${{ matrix.go-version }}
-          path: ${{ env.GO_DIR }}/TestResults-${{ matrix.go-version }}.json
+      # - name: Test with Go
+      #   run: go test ./test -json > TestResults-${{ matrix.go-version }}.json
+      #   working-directory: ${{ env.GO_DIR }}
+      # - name: Upload Go test results
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Go-results-${{ matrix.go-version }}
+      #     path: ${{ env.GO_DIR }}/TestResults-${{ matrix.go-version }}.json

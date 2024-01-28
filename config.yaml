@@ -1,0 +1,11 @@
+templateDir: templates/
+additionalProperties:
+  packageName: api
+  enumClassPrefix: true
+  generateInterfaces: true
+  structPrefix: true
+  useOneOfDiscriminatorLookup: true
+files:
+  README.mustache:
+    templateType: SupportingFiles
+    destinationFilename: README.md

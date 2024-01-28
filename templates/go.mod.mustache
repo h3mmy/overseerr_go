@@ -1,0 +1,9 @@
+module github.com/h3mmy/overseerr_go/api
+
+go 1.18
+
+require (
+	{{#withAWSV4Signature}}
+	github.com/aws/aws-sdk-go v1.34.14
+	{{/withAWSV4Signature}}
+)
